@@ -101,23 +101,23 @@ $(function() {
     var artistName = $(this).text();
     artistsArray.map(function(artist) {
       if (artist.name === artistName) {
-        $("#artist-info-output").html("<div class='removable-main'><li>" +
-                                        artist.name + " from " +
-                                        artist.group + "</li>" + "<li><img src='" +
-                                        artist.image + "' alt='" +
-                                        artist.name + "'>" + "<li>" +
-                                        artist.info + "<h3>" +
-                                        artist.name + " uses the following pedals:</h3></li>" +
-                                        "<ul id='artist-pedal-output' class='pedal-click clickable'></ul></div>");
-
+        $("#artist-info-output").html('<div class="removable-main">' +
+                                        '<li>' + artist.name + ' from ' + artist.group + '</li>' +
+                                        '<li><img src="' + artist.image + '" alt="' + artist.name + '">' +
+                                        '<li>' + artist.info + '</li>' +
+                                        '<h3>' + artist.name + ' uses the following pedals:</h3></li>' +
+                                        '<ul id="artist-pedal-output" class="pedal-click clickable">' +
+                                        '</ul>' +
+                                        '</div>'
+        );
         artist.pedals.map(function(artistPedal) {
           $("#artist-pedal-output").append("<li>" + artistPedal + "</li>");
         });
       };
     });
 
-    $(".pedal-click").on('click', 'li', function() {
-      $(".removable-main").remove();
+    $('.pedal-click').on('click', 'li', function() {
+      $('.removable-main').remove();
       pedalClick($(this).text());
 
     });
