@@ -39,7 +39,9 @@ pedalsArray.push(new Pedal("DigiTech XXD DigiDelay", "DigiTech", "Delay", "http:
 
 pedalsArray.push(new Pedal ("Strymon Big Sky - Multi-Dimensional Reverberation", "Strymon", "Reverb", "img/pedals/StrymonBigSky.jpg", "Plug into BigSky and instantly lift your sound into the stratosphere. The world below you fades into the distance, and you're elevated into a glow of lush, glorious, radiant reverbs. To create a reverb experience as natural, beautiful, and immersive as BigSky required tremendous feats of sound engineering and artistic imagination. Using the fundamentals of acoustical science as our beacon, we carefully studied and scientifically analyzed reverb technology from the past fifty years. We faithfully captured the essence of these classic sounds, and forged ahead to dream up our vision of reverbs from the future."))
 
-pedalsArray.push(new Pedal ("Boss GE-7 Equalizer", "Boss", "Equalizer", "img/pedals/bossGE7.jpg", "The GE-7 Equalizer pedal offers seven bands of EQ ranging from 100Hz to 6.4kHz, ideal for guitar sounds, with boost/cut of +/- 15dB per band. This lets you completely control your sound and eliminate unwanted feedback, particularly when connected after a distortion effect."))
+pedalsArray.push(new Pedal ("Boss GE-7 Equalizer", "Boss", "Equalizer", "img/pedals/bossGE7.jpg", "The GE-7 Equalizer pedal offers seven bands of EQ ranging from 100Hz to 6.4kHz, ideal for guitar sounds, with boost/cut of +/- 15dB per band. This lets you completely control your sound and eliminate unwanted feedback, particularly when connected after a distortion effect."));
+
+pedalsArray.push (new Pedal ("Electro-Harmonix Small Clone", "Electro-Harmonix", "Chorus", "img/pedals/ElectroSmallClone.jpg", "The classic chorus! Analog chorus pedal popularized by Kurt Cobain. The finest analog chorus sounds: from clear, rich and dimensional to warm pulsating warbles, can be intensified with the Depth Control. Simple tweaks generate exciting doubling effects. Chiming 12-string tone, or Leslie-like warbles."));
 
 // artist variables
 
@@ -58,6 +60,8 @@ artistsArray.push(new Artist ("Chelsea Wolfe", "Chelsea Wolfe", ["DigiTech XXD D
 artistsArray.push(new Artist ("Greta Kline", "Frankie Cosmos", ["Strymon Big Sky - Multi-Dimensional Reverberation"], "img/artists/FrankieCosmos.jpg", "Greta Kline, better known by her stage name Frankie Cosmos, is an American musician and singer-songwriter. She is known for her independent releases, inspired by Frank O'Hara's poetry, DIY ethics of K Records and the early 2000s New York City's anti-folk scene. Kline is also the former bass guitarist of the band Porches. She is the daughter of actors Kevin Kline and Phoebe Cates."));
 
 artistsArray.push(new Artist ("Corin Tucker", "Sleater-Kinney", ["Boss GE-7 Equalizer"], "img/artists/CorinTucker.jpg", "Corin Tucker is an American singer, songwriter, and guitarist, best known for her work with rock band Sleater-Kinney. Prior to forming Sleater-Kinney, Tucker was a member of the indie rock group Heavens to Betsy. She has also released work under the name The Corin Tucker Band."));
+
+artistsArray.push(new Artist ("Rob Crow", "Pinback", ["Electro-Harmonix Small Clone"], "img/artists/RobCrow.jpg", "Rob Crow, Jr. is an American singer and multi-instrumentalist from San Diego, California known for the long list of bands and projects he is associated with, mostly in the genres of indie rock and math rock. He is best known for his involvement with the bands Pinback (co-led by Zach Smith from Three Mile Pilot), Heavy Vegetable, Physics, Optiganally Yours and Thingy; in addition he has also led or leads the bands Advertising, Alpha Males, Altron Tube, Cthugha, Fantasy Mission Force, Goblin Cock, Holy Smokes, The Ladies, Other Men and Remote Action Sequence Project, as well as performing and releasing solo records under his own name and under the name Snotnose."));
 
 
 
