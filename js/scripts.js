@@ -1,3 +1,4 @@
+
 // backend
 
 // pedal constructor
@@ -27,3 +28,25 @@ var bossRV3= new Pedal ("Boss RV-3", "Boss", "Reverb/Delay", "http://www.effects
 var kevinParker = new Artist ("Kevin Parker", "Tame Impala", "Boss DS-1", "Kevin Parker is an Australian singer, songwriter, multi-instrumentalist and record producer, best known for being the frontman and live guitarist of the Australian psychedelic rock band Tame Impala, for which he writes, records, and produces the music.");
 
 var kurtVile = new Artist ("Kurt Vile", "Kurt Vile & The Violators", "Boss RV-3", "Kurt Vile is an American singer, songwriter, multi-instrumentalist and record producer. He is known for his solo work and as the former lead guitarist of rock band The War on Drugs. Both in the studio and during live performances, Vile is accompanied by his backing band, The Violators, which currently includes Jesse Trbovich (bass, guitar, saxophone), Rob Laakso (guitar, bass) and Kyle Spence (drums).");
+
+var newArray = ["Boss DS-1", "Electro Harmonix Small Stone", "Strymon Big Sky", "MXR Phase 90", "Diamond Compressor"]
+
+
+// Front end
+$(function() {
+
+  $("#pedals").click(function() {
+    pedalsArray.map(function(pedal) {
+      $("#pedal-list").append("<li>" + pedal.name + "</li>");
+    });
+  });
+
+  $("#pedal-list").on('click', 'li', function() {
+    var pedalName = $(this).text();
+    console.log("li tag " + pedalName);
+    newArray.map(function(arrayItem) {
+      if (arrayItem === pedalName);
+      $("#pedal-info-output").html("<li>" + arrayItem + "</li>");
+    });
+  });
+});
