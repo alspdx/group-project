@@ -1,6 +1,6 @@
-// backend
+// Back end logic
 
-// pedal constructor
+// Pedal constructor
 function Pedal(name, brand, type, link, image, info){
   this.name = name;
   this.brand = brand;
@@ -10,7 +10,7 @@ function Pedal(name, brand, type, link, image, info){
   this.info = info;
 }
 
-// artist constructor
+// Artist constructor
 function Artist(name, group, pedals, image, info) {
   this.name = name;
   this.group = group;
@@ -19,11 +19,11 @@ function Artist(name, group, pedals, image, info) {
   this.info = info;
 }
 
-// object arrays
+// Object arrays
 var pedalsArray = [];
 var artistsArray = [];
 
-// pedal variables
+// Pedal variables
 
 pedalsArray.push(new Pedal ("Boss DS-1 Distortion", "Boss", "Distortion", "http://www.effectsdatabase.com/model/boss/compact/ds1", "img/pedals/bossDS1.jpg", "This is the classic distortion pedal launched a million guitar solos. Known by professional guitarists the world over as 'that orange BOSS distortion,' the DS-1 Distortion is still in production to this day, thanks to its distinct growling-yet-warm tone and bite. Plug it into your favorite stack and see what we mean."));
 
@@ -43,7 +43,7 @@ pedalsArray.push(new Pedal ("Boss GE-7 Equalizer", "Boss", "Equalizer", "img/ped
 
 pedalsArray.push (new Pedal ("Electro-Harmonix Small Clone", "Electro-Harmonix", "Chorus", "img/pedals/ElectroSmallClone.jpg", "The classic chorus! Analog chorus pedal popularized by Kurt Cobain. The finest analog chorus sounds: from clear, rich and dimensional to warm pulsating warbles, can be intensified with the Depth Control. Simple tweaks generate exciting doubling effects. Chiming 12-string tone, or Leslie-like warbles."));
 
-// artist variables
+// Artist variables
 
 artistsArray.push(new Artist ("Kevin Parker", "Tame Impala", ["Boss DS-1 Distortion", "Electro-Harmonix Small Stone", "Boss BD-2 Blues Driver"], "img/artists/KevinParker.jpg", "Kevin Parker is an Australian singer, songwriter, multi-instrumentalist and record producer, best known for being the frontman and live guitarist of the Australian psychedelic rock band Tame Impala, for which he writes, records, and produces the music."));
 
@@ -63,6 +63,7 @@ artistsArray.push(new Artist ("Corin Tucker", "Sleater-Kinney", ["Boss GE-7 Equa
 
 artistsArray.push(new Artist ("Rob Crow", "Pinback", ["Electro-Harmonix Small Clone"], "img/artists/RobCrow.jpg", "Rob Crow, Jr. is an American singer and multi-instrumentalist from San Diego, California known for the long list of bands and projects he is associated with, mostly in the genres of indie rock and math rock. He is best known for his involvement with the bands Pinback (co-led by Zach Smith from Three Mile Pilot), Heavy Vegetable, Physics, Optiganally Yours and Thingy; in addition he has also led or leads the bands Advertising, Alpha Males, Altron Tube, Cthugha, Fantasy Mission Force, Goblin Cock, Holy Smokes, The Ladies, Other Men and Remote Action Sequence Project, as well as performing and releasing solo records under his own name and under the name Snotnose."));
 
+// Back end functions
 function pedalClick(text) {
   pedalsArray.map(function(pedal) {
     if (pedal.name === text) {
@@ -71,11 +72,12 @@ function pedalClick(text) {
   });
 };
 
-function makePedalOutput(foundPedal){
+// Front end functions
+function makePedalOutput(foundPedal) {
   $("#pedal-info-output").html('<div class="removable-main"><li>' + foundPedal.info + '</li>' + '<li><a href="' + foundPedal.link + '" target="_blank">Click here for more information</a></li>' + '<li><img src="' + foundPedal.image + '" alt="' + foundPedal.name + '"></div>');
 }
 
-// Front end
+// Front end logic
 $(function() {
 
   $("#pedals").click(function() {
@@ -94,7 +96,6 @@ $(function() {
       $("#artist-list").append("<li class='clickable removable-sidebar'>" + artist.name + "</li>")
     });
   });
-
 
   $("#artist-list").on('click', 'li', function() {
     $(".removable-main").remove();
@@ -115,11 +116,9 @@ $(function() {
         });
       };
     });
-
     $('.pedal-click').on('click', 'li', function() {
       $('.removable-main').remove();
       pedalClick($(this).text());
-
     });
   });
 });
