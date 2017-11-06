@@ -37,14 +37,16 @@ $(function() {
   // Show lists
 
   $("#pedals").click(function() {
+    $(".removable").remove();
     pedalsArray.map(function(pedal) {
-      $("#pedal-list").append("<li class='clickable'>" + pedal.name + "</li>");
+      $("#pedal-list").append("<li class='clickable removable'>" + pedal.name + "</li>");
     });
   });
 
   $("#artists").click(function(){
+    $(".removable").remove();
     artistsArray.map(function(artist) {
-      $("#artist-list").append("<li class='clickable'>" + artist.name + "</li>");
+      $("#artist-list").append("<li class='clickable removable'>" + artist.name + "</li>")
     });
   });
 
@@ -54,16 +56,17 @@ $(function() {
     console.log("li tag " + pedalName);
     pedalsArray.map(function(pedal) {
       if (pedal.name === pedalName) {
-        $("#pedal-info-output").html("<li>" + pedal.info + "</li>" + "<li><a href='" + pedal.link + "' target='_blank'>Click here for more information</a></li>" + "<li><img src='" + pedal.image + "' alt='" + pedal.name + "'>");
+        $("#pedal-info-output").html("<div class='removable'><li>" + pedal.info + "</li>" + "<li><a href='" + pedal.link + "' target='_blank'>Click here for more information</a></li>" + "<li><img src='" + pedal.image + "' alt='" + pedal.name + "'></div>");
       };
     });
   });
+
   $("#artist-list").on('click', 'li', function() {
     var artistName = $(this).text();
     console.log("li tag " + artistName);
     artistsArray.map(function(artist) {
       if (artist.name === artistName) {
-        $("#artist-info-output").html("<li>" + artist.name + " from " + artist.group + "</li>" + "<li><img src='" + artist.image + "' alt='" + artist.name + "'>" + "<li>" + artist.info + "</li>" + "<li>" + artist.pedals + "</li>");
+        $("#artist-info-output").html("<div class='removable'><li>" + artist.name + " from " + artist.group + "</li>" + "<li><img src='" + artist.image + "' alt='" + artist.name + "'>" + "<li>" + artist.info + "</li>" + "<li>" + artist.pedals + "</li></div>");
       };
     });
   });
