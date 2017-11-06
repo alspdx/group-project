@@ -1,6 +1,6 @@
-// backend
+// Back end logic
 
-// pedal constructor
+// Pedal constructor
 function Pedal(name, brand, type, link, image, info){
   this.name = name;
   this.brand = brand;
@@ -10,7 +10,7 @@ function Pedal(name, brand, type, link, image, info){
   this.info = info;
 }
 
-// artist constructor
+// Artist constructor
 function Artist(name, group, pedals, image, info) {
   this.name = name;
   this.group = group;
@@ -19,11 +19,11 @@ function Artist(name, group, pedals, image, info) {
   this.info = info;
 }
 
-// object arrays
+// Object arrays
 var pedalsArray = [];
 var artistsArray = [];
 
-// pedal variables
+// Pedal variables
 
 pedalsArray.push(new Pedal ("Boss DS-1 Distortion", "Boss", "Distortion", "http://www.effectsdatabase.com/model/boss/compact/ds1", "img/pedals/bossDS1.jpg", "This is the classic distortion pedal launched a million guitar solos. Known by professional guitarists the world over as 'that orange BOSS distortion,' the DS-1 Distortion is still in production to this day, thanks to its distinct growling-yet-warm tone and bite. Plug it into your favorite stack and see what we mean."));
 
@@ -49,13 +49,13 @@ pedalsArray.push (new Pedal ("Boss PN-2 Tremolo/Pan", "Boss", "Tremolo", "http:/
 
 pedalsArray.push (new Pedal ("DigiTech Whammy DT", "DigiTech", "Pitch Shift", "http://www.effectsdatabase.com/model/digitech/whammy/dt", "img/pedals/DigiTechWhammyDT.jpg", "The Whammy pedal is a digital effects pedal designed for guitar and manufactured by DigiTech. The Whammy was the first widely known effects pedal that could do foot controlled pitch shifting effects. The pedal emulates sounds that a guitarist normally makes using the vibrato (whammy) bar on the guitar, but with a greatly enhanced pitch range and without tuning hassles associated with traditional vibrato bars."));
 
-// artist variables
+// Artist variables
 
-artistsArray.push(new Artist ("Kevin Parker", "Tame Impala", ["Boss DS-1 Distortion"], "img/artists/KevinParker.jpg", "Kevin Parker is an Australian singer, songwriter, multi-instrumentalist and record producer, best known for being the frontman and live guitarist of the Australian psychedelic rock band Tame Impala, for which he writes, records, and produces the music."));
+artistsArray.push(new Artist ("Kevin Parker", "Tame Impala", ["Boss DS-1 Distortion", "Electro-Harmonix Small Stone", "Boss BD-2 Blues Driver"], "img/artists/KevinParker.jpg", "Kevin Parker is an Australian singer, songwriter, multi-instrumentalist and record producer, best known for being the frontman and live guitarist of the Australian psychedelic rock band Tame Impala, for which he writes, records, and produces the music."));
 
 artistsArray.push(new Artist ("Kurt Vile", "Kurt Vile & The Violators", ["Boss RV-3 Reverb/Delay"], "img/artists/KurtVile.jpg", "Kurt Vile is an American singer, songwriter, multi-instrumentalist and record producer. He is known for his solo work and as the former lead guitarist of rock band The War on Drugs. Both in the studio and during live performances, Vile is accompanied by his backing band, The Violators, which currently includes Jesse Trbovich (bass, guitar, saxophone), Rob Laakso (guitar, bass) and Kyle Spence (drums)."));
 
-artistsArray.push(new Artist ("Ty Segall", "Ty Segall", ["Electro-Harmonix Small Stone"], "img/artists/TySegall.jpg", "Ty Garrett Segall is an American multi-instrumentalist, singer-songwriter and record producer. He is best known for his prolific solo career during which he has released nine studio albums, alongside various EPs and singles. Segall is also a member of the bands Fuzz, Broken Bat and GØGGS, and is a former member of The Traditional Fools, Epsilons, Party Fowl, Sic Alps, and The Perverts"));
+artistsArray.push(new Artist ("Ty Segall", "Ty Segall", ["Electro-Harmonix Small Stone"], "img/artists/TySegall.jpg", "Ty Segall is an American multi-instrumentalist, singer-songwriter and record producer. He is best known for his prolific solo career during which he has released nine studio albums, alongside various EPs and singles. Segall is also a member of the bands Fuzz, Broken Bat and GØGGS, and is a former member of The Traditional Fools, Epsilons, Party Fowl, Sic Alps, and The Perverts"));
 
 artistsArray.push(new Artist ("Frank Zappa", "Frank Zappa", ["MXR Phase 90"], "img/artists/FrankZappa.jpg", "Frank Vincent Zappa was an American musician, composer, activist and filmmaker. His work was characterized by nonconformity, free-form improvisation, sound experiments, musical virtuosity, and satire of American culture. In a career spanning more than 30 years, Zappa composed rock, pop, jazz, jazz fusion, orchestral and musique concrète works, and produced almost all of the 60-plus albums that he released with his band the Mothers of Invention and as a solo artist. Zappa also directed feature-length films and music videos, and designed album covers. He is considered one of the most innovative and stylistically diverse rock musicians of his era."));
 
@@ -69,46 +69,68 @@ artistsArray.push(new Artist ("Corin Tucker", "Sleater-Kinney", ["Boss GE-7 Equa
 
 artistsArray.push(new Artist ("Rob Crow", "Pinback", ["Electro-Harmonix Small Clone"], "img/artists/RobCrow.jpg", "Rob Crow, Jr. is an American singer and multi-instrumentalist from San Diego, California known for the long list of bands and projects he is associated with, mostly in the genres of indie rock and math rock. He is best known for his involvement with the bands Pinback (co-led by Zach Smith from Three Mile Pilot), Heavy Vegetable, Physics, Optiganally Yours and Thingy; in addition he has also led or leads the bands Advertising, Alpha Males, Altron Tube, Cthugha, Fantasy Mission Force, Goblin Cock, Holy Smokes, The Ladies, Other Men and Remote Action Sequence Project, as well as performing and releasing solo records under his own name and under the name Snotnose."));
 
+
 artistsArray.push(new Artist ("Donald Glover", "Childish Gambino", ["Maestro FZ-1 Fuzz-Tone"], "img/artists/ChildishGambino.jpg", "Donald Glover is an American actor, writer, producer, director, comedian, rapper, DJ, singer, and songwriter. He performs as a stage artist under the stage name Childish Gambino, and as a disc jockey, he performs under the name mcDJ. After several self-released albums and mixtapes, Glover signed to Glassnote Records in 2011. He released his first album, Camp, on November 15, 2011 to generally positive reviews. His second studio album, Because the Internet, was released on December 10, 2013. Glover was nominated for two Grammy Awards in 2015, Best Rap Album for Because the Internet and Best Rap Performance for his single 3005. Glover's third album, Awaken, My Love!, was released on December 2, 2016, spawning the hit single Redbone, which peaked at number 12 on the Billboard Hot 100."))
 
 // artistsArray.push(new Artist("Kevin Shield")
 
-// Front end
+// Back end functions
+function pedalClick(text) {
+  pedalsArray.map(function(pedal) {
+    if (pedal.name === text) {
+      makePedalOutput(pedal);
+    };
+  });
+};
+
+// Front end functions
+function makePedalOutput(foundPedal) {
+  $("#pedal-info-output").html('<div class="removable-main"><li>' + foundPedal.info + '</li>' + '<li><a href="' + foundPedal.link + '" target="_blank">Click here for more information</a></li>' + '<li><img src="' + foundPedal.image + '" alt="' + foundPedal.name + '"></div>');
+}
+
+
+// Front end logic
 $(function() {
-  // Show lists
 
   $("#pedals").click(function() {
-    $(".removable").remove();
+    $(".removable-sidebar").remove();
     pedalsArray.map(function(pedal) {
-      $("#pedal-list").append("<li class='clickable removable'>" + pedal.name + "</li>");
+      $("#pedal-list").append("<li class='clickable removable-sidebar'>" + pedal.name + "</li>");
+    });
+    $(".pedal-click").on('click', 'li', function() {
+      pedalClick($(this).text());
     });
   });
 
   $("#artists").click(function(){
-    $(".removable").remove();
+    $(".removable-sidebar").remove();
     artistsArray.map(function(artist) {
-      $("#artist-list").append("<li class='clickable removable'>" + artist.name + "</li>")
-    });
-  });
-
-  // Show details
-  $("#pedal-list").on('click', 'li', function() {
-    var pedalName = $(this).text();
-    console.log("li tag " + pedalName);
-    pedalsArray.map(function(pedal) {
-      if (pedal.name === pedalName) {
-        $("#pedal-info-output").html("<div class='removable'><li>" + pedal.info + "</li>" + "<li><a href='" + pedal.link + "' target='_blank'>Click here for more information</a></li>" + "<li><img src='" + pedal.image + "' alt='" + pedal.name + "'></div>");
-      };
+      $("#artist-list").append("<li class='clickable removable-sidebar'>" + artist.name + "</li>")
     });
   });
 
   $("#artist-list").on('click', 'li', function() {
+    $(".removable-main").remove();
     var artistName = $(this).text();
-    console.log("li tag " + artistName);
     artistsArray.map(function(artist) {
       if (artist.name === artistName) {
-        $("#artist-info-output").html("<div class='removable'><li>" + artist.name + " from " + artist.group + "</li>" + "<li><img src='" + artist.image + "' alt='" + artist.name + "'>" + "<li>" + artist.info + "</li>" + "<li>" + artist.pedals + "</li></div>");
+        $("#artist-info-output").html('<div class="removable-main">' +
+                                        '<li>' + artist.name + ' from ' + artist.group + '</li>' +
+                                        '<li><img src="' + artist.image + '" alt="' + artist.name + '">' +
+                                        '<li>' + artist.info + '</li>' +
+                                        '<h3>' + artist.name + ' uses the following pedals:</h3></li>' +
+                                        '<ul id="artist-pedal-output" class="pedal-click clickable">' +
+                                        '</ul>' +
+                                        '</div>'
+        );
+        artist.pedals.map(function(artistPedal) {
+          $("#artist-pedal-output").append("<li>" + artistPedal + "</li>");
+        });
       };
+    });
+    $('.pedal-click').on('click', 'li', function() {
+      $('.removable-main').remove();
+      pedalClick($(this).text());
     });
   });
 });
