@@ -11,8 +11,8 @@ function Pedal(name, brand, type, link, image, info){
 }
 
 // artist constructor
-function Artist(artistName, group, pedals, image, info) {
-  this.artistName = artistName;
+function Artist(name, group, pedals, info) {
+  this.name = name;
   this.group = group;
   this.pedals = pedals;
   this.image = image;
@@ -64,23 +64,43 @@ artistsArray.push(new Artist ("Corin Tucker", "Sleater-Kinney", ["Boss GE-7 Equa
 artistsArray.push(new Artist ("Rob Crow", "Pinback", ["Electro-Harmonix Small Clone"], "img/artists/RobCrow.jpg", "Rob Crow, Jr. is an American singer and multi-instrumentalist from San Diego, California known for the long list of bands and projects he is associated with, mostly in the genres of indie rock and math rock. He is best known for his involvement with the bands Pinback (co-led by Zach Smith from Three Mile Pilot), Heavy Vegetable, Physics, Optiganally Yours and Thingy; in addition he has also led or leads the bands Advertising, Alpha Males, Altron Tube, Cthugha, Fantasy Mission Force, Goblin Cock, Holy Smokes, The Ladies, Other Men and Remote Action Sequence Project, as well as performing and releasing solo records under his own name and under the name Snotnose."));
 
 
-
+var artistsArray = [kevinParker, kurtVile];
 
 // Front end
 $(function() {
+  // Show lists
 
   $("#pedals").click(function() {
+    $(".removable").remove();
     pedalsArray.map(function(pedal) {
-      $("#pedal-list").append("<li>" + pedal.name + "</li>");
+      $("#pedal-list").append("<li class='clickable removable'>" + pedal.name + "</li>");
     });
   });
 
+  $("#artists").click(function(){
+    $(".removable").remove();
+    artistsArray.map(function(artist) {
+      $("#artist-list").append("<li class='clickable removable'>" + artist.name + "</li>")
+    });
+  });
+
+  // Show details
   $("#pedal-list").on('click', 'li', function() {
     var pedalName = $(this).text();
     console.log("li tag " + pedalName);
     pedalsArray.map(function(pedal) {
       if (pedal.name === pedalName) {
-        $("#pedal-info-output").html("<li>" + pedal.info + "</li>");
+        $("#pedal-info-output").html("<div class='removable'><li>" + pedal.info + "</li>" + "<li><a href='" + pedal.link + "' target='_blank'>Click here for more information</a></li>" + "<li><img src='" + pedal.image + "' alt='" + pedal.name + "'></div>");
+      };
+    });
+  });
+
+  $("#artist-list").on('click', 'li', function() {
+    var artistName = $(this).text();
+    console.log("li tag " + artistName);
+    artistsArray.map(function(artist) {
+      if (artist.name === artistName) {
+        $("#artist-info-output").html("<div class='removable'><li>" + artist.name + " from " + artist.group + "</li>" + "<li><img src='" + artist.image + "' alt='" + artist.name + "'>" + "<li>" + artist.info + "</li>" + "<li>" + artist.pedals + "</li></div>");
       };
     });
   });

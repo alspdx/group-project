@@ -1,0 +1,16 @@
+.clickable:hover {
+  cursor: pointer;
+}
+
+.outline {
+  border: 2px solid red;
+}
+
+ul {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+  width: 100%;
+}
