@@ -4,27 +4,23 @@
     <meta charset="utf-8">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Plaster|Raleway:300" rel="stylesheet">
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/scripts.js"></script>
     <title></title>
   </head>
   <body>
-    <div class="container-responsive ">
+    <div class="navigation">
+      <ul>
+        <li id="pedals" class="clickable">Pedals</li>
+        <li id="artists" class="clickable">Artists</li>
+        <li id="users" class="clickable">Users</li>
+        <li id="add-users" class="clickable"></li>
+      </ul>
+    </div>
+    <div>
       <div class="row">
-        <div class="col-md-12 text-center">
-          <h1>iStompr</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 outline">
-          <div class="row">
-            <div class="col-md-4 text-left">
-              <h3 id="pedals" class="clickable">Pedals</h3>
-              <h3 id="artists" class="clickable">Artists</h3>
-              <h3 id="users" class="clickable">Users</h3>
-              <h3 id="add-users" class="clickable">Add User</h3>
-            </div>
-            <div class="col-md-8 text-left">
+        <div class="col-md-2 outline">
               <ul id="pedal-list" class="pedal-click clickable">
 
               </ul>
@@ -34,19 +30,16 @@
               <ul id="users-list" class="user-click clickable">
 
               </ul>
-
-
-            </div>
-          </div>
         </div>
         <!--right div-->
-        <div class="col-md-9 outline">
+        <div class="col-md-10 outline">
           <ul id="info-output" class="hide">
 
           </ul>
           <ul id="user-info-output" class="hide">
 
           </ul>
+
 
           <div id="new-user-form" class="hide">
             <form id="contact-input">
