@@ -116,15 +116,24 @@ function artistClick(text) {
   });
 };
 
+function userClick(text) {
+  usersArray.map(function(user) {
+    if (user.name === text) {
+      makeUserOutput(user);
+    };
+  });
+};
+
 // Front end functions
 function makePedalOutput(foundPedal) {
-  $("#info-output").html('<div class="removable-main"><li>' + foundPedal.info + '</li>' +
-                                  '<li><a href="' + foundPedal.link + '" target="_blank">Click here for more information</a></li>' + '<li><img src="' + foundPedal.image + '" alt="' + foundPedal.name + '"></li>' +
-                                  '<h3>These artists use this effect pedal:</h3>' +
-                                  '<ul id="pedal-user-output" class="artist-click clickable">' +
-                                  '</ul>' +
-                                '</div>'
-                              );
+  $("#info-output").html('<div class="removable-main">' +
+                            '<li>' + foundPedal.info + '</li>' +
+                            '<li><a href="' + foundPedal.link + '" target="_blank">Click here for more information</a></li>' + '<li><img src="' + foundPedal.image + '" alt="' + foundPedal.name + '"></li>' +
+                            '<h3>These artists use this effect pedal:</h3>' +
+                            '<ul id="pedal-user-output" class="artist-click clickable">' +
+                            '</ul>' +
+                          '</div>'
+                        );
 
   foundPedal.artists.map(function(artist) {
     $('#pedal-user-output').append('<li>' + artist + '</li>');
@@ -136,20 +145,47 @@ function makePedalOutput(foundPedal) {
 
 function makeArtistOutput(foundArtist) {
   $('#info-output').html('<div class="removable-main">' +
-                                  '<li>' + foundArtist.name + ' from ' + foundArtist.group + '</li>' +
-                                  '<li><img src="' + foundArtist.image + '" alt="' + foundArtist.name + '">' +
-                                  '<li>' + foundArtist.info + '</li>' +
-                                  '<h3>' + foundArtist.name + ' uses the following pedals:</h3></li>' +
-                                  '<ul id="artist-pedal-output" class="pedal-click clickable">' +
-                                  '</ul>' +
-                                '</div>'
-                              );
+                            '<li>' + foundArtist.name + ' from ' + foundArtist.group + '</li>' +
+                            '<li><img src="' + foundArtist.image + '" alt="' + foundArtist.name + '">' +
+                            '<li>' + foundArtist.info + '</li>' +
+                            '<h3>' + foundArtist.name + ' uses the following pedals:</h3></li>' +
+                            '<ul id="artist-pedal-output" class="pedal-click clickable">' +
+                            '</ul>' +
+                          '</div>'
+                        );
 
   foundArtist.pedals.map(function(pedal) {
     $('#artist-pedal-output').append('<li>' + pedal + '</li>');
   });
   $('.pedal-click').on('click', 'li', function() {
     pedalClick($(this).text());
+  });
+}
+
+function makeUserOutput(foundUser) {
+  $('#info-output').html('<div class="removable-main">' +
+                            '<li>' + foundUser.name + ' from ' + foundUser.group + '</li>' +
+                            '<li>' + foundUser.info + '</li>' +
+                            '<h3>' + foundUser.name + ' uses the following pedals:</h3>' +
+                            '<ul id="user-pedals-output" class="pedal-click clickable">' +
+                            '</ul>' +
+                            '<h3>' + ' Follows: ' + '</h3>' +
+                            '<ul id="user-artists-output" class="artist-click clickable">' +
+                            '</ul>' +
+                          '</div>'
+                        );
+
+  foundUser.pedals.map(function(pedal) {
+    $('#user-pedals-output').append('<li>' + pedal + '</li>');
+  });
+  foundUser.artists.map(function(artist) {
+    $('#user-artists-output').append('<li>' + artist + '</li>');
+  });
+  $('.pedal-click').on('click', 'li', function() {
+    pedalClick($(this).text());
+  });
+  $('.artist-click').on('click', 'li', function() {
+    artistClick($(this).text());
   });
 }
 
@@ -165,7 +201,7 @@ $(function() {
       pedalClick($(this).text());
     });
   });
-  
+
   $('#artists').click(function(){
     $('.removable-sidebar').remove();
     artistsArray.map(function(artist) {
@@ -176,43 +212,13 @@ $(function() {
     });
   });
 
-
   $("#users").click(function(){
     $(".removable-sidebar").remove();
     usersArray.map(function(user) {
-      $("#users-list").append("<li class='clickable removeable-sidebar'>" + user.name + "</li>")
+      $("#users-list").append("<li class='clickable removable-sidebar'>" + user.name + "</li>")
     });
-  });
-
-  $("#users-list").on('click', 'li', function(){
-    $(".removeable-main").remove();
-    var userName = $(this).text();
-    usersArray.map(function(user) {
-      if (user.name === userName) {
-        $("#user-info-output").html('<div class="removable-main">' +
-                                        '<li>' + user.name + ' from ' + user.group + '</li>' +
-                                        '<li>' + user.info + '</li>' +
-                                        '<h3>' + user.name + ' uses the following pedals:</h3>' +
-                                        '<ul id="user-pedal-output" class="pedal-click clickable">' +
-                                        '</ul>' +
-                                        '<h3>' + ' Follows: ' + '</h3>' +
-                                        '<ul id="user-artist-output" class="artist-click clickable">' + '</ul>' +
-                                        '</div>'
-        );
-        user.pedals.map(function(userPedal) {
-          $("#user-pedal-output").append("<li>" + userPedal + "</li>");
-        });
-        user.artists.map(function(userArtist) {
-          $("#user-artist-output").append("<li>" + userArtist + "</li>");
-        });
-      };
-    });
-    $('.pedal-click').on('click', 'li', function() {
-      $('.removable-main').remove();
-      pedalClick($(this).text());
-    });
+    $('.user-click').on('click', 'li', function() {
+      userClick($(this).text());
     });
   });
 });
-
-
