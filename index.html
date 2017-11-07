@@ -40,6 +40,29 @@
 
           </ul>
 
+
+          <div id="new-user-form" class="hide">
+            <form id="contact-input">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Name" id="name">
+                <input type="text" class="form-control" placeholder="Band/Group" id="group">
+                <input type="text" class="form-control" placeholder="About me" id="about-me">
+                <div id="add-pedals">
+                  <select class="custom-select form control col add-pedal add-pedal-select" required>
+                    <option></option>
+                  </select>
+                </div>
+                <button type="button" id="add-another-pedal">Add another pedal</button>
+                <div id="add-artists">
+                  <select class="custom-select form control col add-artist add-artist-select" required>
+                    <option value=""></option>
+                  </select>
+                </div>
+                <button type="button" id="add-another-artist">Follow another artist</button>
+              </div>
+              <button id="contact-info" type="submit" class="btn btn-outline-black btn-lg btn-block head">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

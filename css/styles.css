@@ -17,6 +17,10 @@ body {
   color: #fff;
 }
 
+#new-user-form {
+  /*display: none;*/
+}
+
 .clickable:hover {
   cursor: pointer;
 }
