@@ -125,6 +125,18 @@ function userClick(text) {
 };
 
 // Front end functions
+function attachClick() {
+  $('.pedal-click').on('click', 'li', function() {
+    pedalClick($(this).text());
+  });
+  $('.artist-click').on('click', 'li', function() {
+    artistClick($(this).text());
+  });
+  $('.user-click').on('click', 'li', function() {
+    userClick($(this).text());
+  });
+}
+
 function makePedalOutput(foundPedal) {
   $("#info-output").html('<div class="removable-main">' +
                             '<li>' + foundPedal.info + '</li>' +
@@ -138,9 +150,7 @@ function makePedalOutput(foundPedal) {
   foundPedal.artists.map(function(artist) {
     $('#pedal-user-output').append('<li>' + artist + '</li>');
   });
-  $('.artist-click').on('click', 'li', function() {
-    artistClick($(this).text());
-  });
+  attachClick();
 }
 
 function makeArtistOutput(foundArtist) {
@@ -157,9 +167,7 @@ function makeArtistOutput(foundArtist) {
   foundArtist.pedals.map(function(pedal) {
     $('#artist-pedal-output').append('<li>' + pedal + '</li>');
   });
-  $('.pedal-click').on('click', 'li', function() {
-    pedalClick($(this).text());
-  });
+  attachClick();
 }
 
 function makeUserOutput(foundUser) {
@@ -181,12 +189,7 @@ function makeUserOutput(foundUser) {
   foundUser.artists.map(function(artist) {
     $('#user-artists-output').append('<li>' + artist + '</li>');
   });
-  $('.pedal-click').on('click', 'li', function() {
-    pedalClick($(this).text());
-  });
-  $('.artist-click').on('click', 'li', function() {
-    artistClick($(this).text());
-  });
+  attachClick();
 }
 
 // Front end logic
@@ -197,9 +200,7 @@ $(function() {
     pedalsArray.map(function(pedal) {
       $('#pedal-list').append('<li class="clickable removable-sidebar">' + pedal.name + '</li>');
     });
-    $('.pedal-click').on('click', 'li', function() {
-      pedalClick($(this).text());
-    });
+    attachClick();
   });
 
   $('#artists').click(function(){
@@ -207,9 +208,7 @@ $(function() {
     artistsArray.map(function(artist) {
       $('#artist-list').append('<li class="clickable removable-sidebar">' + artist.name + '</li>')
     });
-    $('.artist-click').on('click', 'li', function() {
-      artistClick($(this).text());
-    });
+    attachClick();
   });
 
   $("#users").click(function(){
@@ -217,8 +216,6 @@ $(function() {
     usersArray.map(function(user) {
       $("#users-list").append("<li class='clickable removable-sidebar'>" + user.name + "</li>")
     });
-    $('.user-click').on('click', 'li', function() {
-      userClick($(this).text());
-    });
+    attachClick();
   });
 });
