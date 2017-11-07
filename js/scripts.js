@@ -1,4 +1,4 @@
-// Back end logic
+// Back end
 
 // Object arrays
 var pedalsArray = [];
@@ -25,7 +25,6 @@ function Artist(name, group, pedals, image, info) {
   this.info = info;
 }
 
-
 //User constructor
 function User(name, group, info, pedals, artists) {
   this.name = name;
@@ -36,7 +35,6 @@ function User(name, group, info, pedals, artists) {
 }
 
 // Pedal variables
-
 pedalsArray.push(new Pedal ("Boss DS-1 Distortion", "Boss", "Distortion", "http://www.effectsdatabase.com/model/boss/compact/ds1", "img/pedals/bossDS1.jpg", "This is the classic distortion pedal launched a million guitar solos. Known by professional guitarists the world over as 'that orange BOSS distortion,' the DS-1 Distortion is still in production to this day, thanks to its distinct growling-yet-warm tone and bite. Plug it into your favorite stack and see what we mean."));
 
 pedalsArray.push(new Pedal ("Boss RV-3 Reverb/Delay", "Boss", "Reverb/Delay", "http://www.effectsdatabase.com/model/boss/compact/rv3#related", "img/pedals/bossRV3.jpg", "The RV-3 is a popular professional-quality pedal that can produce reverb, delay or both. It offers four different high-density reverb modes plus three delay modes offering delay times up to 2,000ms."));
@@ -64,7 +62,6 @@ pedalsArray.push (new Pedal ("DigiTech Whammy DT", "DigiTech", "Pitch Shift", "h
 pedalsArray.push (new Pedal ("Z. Vex Lo-Fi Loop Junky", "Z. Vex", "Looper", "http://www.effectsdatabase.com/model/zvex/lofiloopjunky", "img/pedals/loopJunky.jpg", "This is the Lo-Fi Loop Junky. It's really low fidelity… the recording of your guitar is filled with hiss, moan, distortion and warped-record strangeness, but everyone will be able to tell the loop from your real guitar. Because the processing of your direct guitar is done with my new bootstrap circuit, with the very highest impedance circuit I've ever developed (even higher than the super hard-on circuit) your direct guitar will have detail incomparable with anything you've ever heard. The juxtaposition of your direct guitar against the smashed, distorted, shimmering/warbling recording of the loop mechanism will make it clear once and for all who is the guitarist and what is the machinery."));
 
 // Artist variables
-
 artistsArray.push(new Artist ("Kevin Parker", "Tame Impala", ["Boss DS-1 Distortion", "Electro-Harmonix Small Stone", "Boss BD-2 Blues Driver"], "img/artists/KevinParker.jpg", "Kevin Parker is an Australian singer, songwriter, multi-instrumentalist and record producer, best known for being the frontman and live guitarist of the Australian psychedelic rock band Tame Impala, for which he writes, records, and produces the music."));
 
 artistsArray.push(new Artist ("Kurt Vile", "Kurt Vile & The Violators", ["Boss RV-3 Reverb/Delay"], "img/artists/KurtVile.jpg", "Kurt Vile is an American singer, songwriter, multi-instrumentalist and record producer. He is known for his solo work and as the former lead guitarist of rock band The War on Drugs. Both in the studio and during live performances, Vile is accompanied by his backing band, The Violators, which currently includes Jesse Trbovich (bass, guitar, saxophone), Rob Laakso (guitar, bass) and Kyle Spence (drums)."));
@@ -126,22 +123,24 @@ function userClick(text) {
 
 // Front end functions
 function attachClick() {
-  $('.pedal-click').on('click', 'li', function() {
+  $('.pedal-click').off('click', 'li').on('click', 'li', function() {
     pedalClick($(this).text());
   });
-  $('.artist-click').on('click', 'li', function() {
+  $('.artist-click').off('click', 'li').on('click', 'li', function() {
     artistClick($(this).text());
   });
-  $('.user-click').on('click', 'li', function() {
+  $('.user-click').off('click', 'li').on('click', 'li', function() {
     userClick($(this).text());
   });
 }
 
 function makePedalOutput(foundPedal) {
   $("#info-output").html('<div class="removable-main">' +
+                            '<li><h2>' + foundPedal.name + '<h2></li>' +
+                            '<li><img src="' + foundPedal.image + '" alt="' + foundPedal.name + '" class="info-image"></li>' +
                             '<li>' + foundPedal.info + '</li>' +
-                            '<li><a href="' + foundPedal.link + '" target="_blank">Click here for more information</a></li>' + '<li><img src="' + foundPedal.image + '" alt="' + foundPedal.name + '"></li>' +
-                            '<h3>These artists use this effect pedal:</h3>' +
+                            '<li><a href="' + foundPedal.link + '" target="_blank">Click here for more information</a></li>' +
+                            '<li><h4>These artists use this effect pedal:</h4><li>' +
                             '<ul id="pedal-user-output" class="artist-click clickable">' +
                             '</ul>' +
                           '</div>'
@@ -155,10 +154,10 @@ function makePedalOutput(foundPedal) {
 
 function makeArtistOutput(foundArtist) {
   $('#info-output').html('<div class="removable-main">' +
-                            '<li>' + foundArtist.name + ' from ' + foundArtist.group + '</li>' +
-                            '<li><img src="' + foundArtist.image + '" alt="' + foundArtist.name + '">' +
+                            '<li><h2>' + foundArtist.name + ' from ' + foundArtist.group + '</h2></li>' +
+                            '<li><img src="' + foundArtist.image + '" alt="' + foundArtist.name + '" class="info-image">' +
                             '<li>' + foundArtist.info + '</li>' +
-                            '<h3>' + foundArtist.name + ' uses the following pedals:</h3></li>' +
+                            '<li><h4>' + foundArtist.name + ' uses the following pedals:</h4></li>' +
                             '<ul id="artist-pedal-output" class="pedal-click clickable">' +
                             '</ul>' +
                           '</div>'
@@ -174,10 +173,10 @@ function makeUserOutput(foundUser) {
   $('#info-output').html('<div class="removable-main">' +
                             '<li>' + foundUser.name + ' from ' + foundUser.group + '</li>' +
                             '<li>' + foundUser.info + '</li>' +
-                            '<h3>' + foundUser.name + ' uses the following pedals:</h3>' +
+                            '<li><h3>' + foundUser.name + ' uses the following pedals:</h3></li>' +
                             '<ul id="user-pedals-output" class="pedal-click clickable">' +
                             '</ul>' +
-                            '<h3>' + ' Follows: ' + '</h3>' +
+                            '<li><h3>' + ' Follows: ' + '</h3></li>' +
                             '<ul id="user-artists-output" class="artist-click clickable">' +
                             '</ul>' +
                           '</div>'
@@ -206,7 +205,7 @@ $(function() {
   $('#artists').click(function(){
     $('.removable-sidebar').remove();
     artistsArray.map(function(artist) {
-      $('#artist-list').append('<li class="clickable removable-sidebar">' + artist.name + '</li>')
+      $('#artist-list').append('<li class="clickable removable-sidebar">' + artist.name + '</li>');
     });
     attachClick();
   });
@@ -214,7 +213,7 @@ $(function() {
   $("#users").click(function(){
     $(".removable-sidebar").remove();
     usersArray.map(function(user) {
-      $("#users-list").append("<li class='clickable removable-sidebar'>" + user.name + "</li>")
+      $("#users-list").append("<li class='clickable removable-sidebar'>" + user.name + "</li>");
     });
     attachClick();
   });
