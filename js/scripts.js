@@ -31,18 +31,9 @@ function User(name, group, info, pedals, artists) {
   this.name = name;
   this.group = group;
   this.info = info;
-  this.pedals = [];
-  //fix me  //fix me
-  //fix me
-  //fix me
-  //fix me
-  //fix me
-  //fix me
-
-  pedals.map(function(pedal){
-    this.pedals.push(pedal);
-  });
+  this.pedals = pedals;
   this.artists = artists;
+
 }
 
 // Pedal variables
@@ -201,6 +192,37 @@ function makeUserOutput(foundUser) {
 
 // Front end logic
 $(function() {
+  //when add user is clicked
+  $("#add-users").click(function(){
+    pedalsArray.map(function(pedal) {
+      $(".add-pedal-select").append('<option value="' + pedal.name + '">' + pedal.name + '</option>');
+    });
+    artistsArray.map(function(artist) {
+      $(".add-artist-select").append('<option value="' + artist.name + '">' + artist.name + '</option>');
+    });
+  });
+
+  //when add another pedal button is clicked
+  $('#add-another-pedal').click(function() {
+    $('.add-pedal-select').removeClass("add-pedal-select");
+    $('#add-pedals').append('<select class="custom-select form control col add-pedal add-pedal-select">' +
+                              '<option value=""></option>' +
+                            '</select>');
+    pedalsArray.map(function(pedal) {
+      $(".add-pedal-select").append('<option value="' + pedal.name + '">' + pedal.name + '</option>');
+    });
+  })
+
+  //when follow another artist is clicked
+  $('#add-another-artist').click(function() {
+    $('.add-artist-select').removeClass("add-artist-select");
+    $('#add-artists').append('<select class="custom-select form control col add-artist add-artist-select">' +
+                              '<option value=""></option>' +
+                            '</select>');
+    artistsArray.map(function(artist) {
+      $(".add-artist-select").append('<option value="' + artist.name + '">' + artist.name + '</option>');
+    });
+  })
 
   $('#pedals').click(function() {
     $('.removable-sidebar').remove();
@@ -237,7 +259,18 @@ $(function() {
     var userName = $("input#name").val();
     var userGroup = $("input#group").val();
     var userAboutMe = $("input#about-me").val();
-    var newUser = new User(userName, userGroup, userAboutMe);
+    var userPedals = [];
+    var userArtists = [];
+    $('.add-pedal').each(function() {
+      var inputtedPedal = $(this).val();
+      userPedals.push(inputtedPedal);
+    })
+    $('.add-artist').each(function() {
+      var inputtedArtist = $(this).val();
+      userArtists.push(inputtedArtist);
+    })
+    var newUser = new User(userName, userGroup, userAboutMe, userPedals, userArtists);
     usersArray.push(newUser);
+    console.log(newUser);
   });
 });
