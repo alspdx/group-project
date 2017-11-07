@@ -31,7 +31,17 @@ function User(name, group, info, pedals, artists) {
   this.name = name;
   this.group = group;
   this.info = info;
-  this.pedals = pedals;
+  this.pedals = [];
+  //fix me  //fix me
+  //fix me
+  //fix me
+  //fix me
+  //fix me
+  //fix me
+
+  pedals.map(function(pedal){
+    this.pedals.push(pedal);
+  });
   this.artists = artists;
 }
 
@@ -220,5 +230,14 @@ $(function() {
     $('.user-click').on('click', 'li', function() {
       userClick($(this).text());
     });
+  });
+
+  $("#contact-input").submit(function(event){
+    event.preventDefault();
+    var userName = $("input#name").val();
+    var userGroup = $("input#group").val();
+    var userAboutMe = $("input#about-me").val();
+    var newUser = new User(userName, userGroup, userAboutMe);
+    usersArray.push(newUser);
   });
 });
