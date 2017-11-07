@@ -1,9 +1,46 @@
+/* COLORS
+dark color: #0E2431
+salmon: #FC3A52
+mustard: #F9B248
+light sand: #E8D5B7
+*/
+
+/*FONTS
+font-family: 'Plaster', cursive;
+font-family: 'Raleway', sans-serif;*/
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0E2431;
+  color: #fff;
+}
+
 .clickable:hover {
   cursor: pointer;
 }
 
 .outline {
-  border: 2px solid red;
+  border: 2px;
+}
+
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #FC3A52;
+  margin-bottom: 2em;
+}
+
+.navigation li {
+  float: left;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 ul {
@@ -12,5 +49,11 @@ ul {
 
 li {
   list-style: none;
-  width: 100%;
+}
+
+.info-image {
+  width: 400px;
+  height: 600px;
+  object-fit: cover;
+  float: right;
 }
