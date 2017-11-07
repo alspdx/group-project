@@ -1,5 +1,9 @@
 // Back end logic
 
+// Object arrays
+var pedalsArray = [];
+var artistsArray = [];
+
 // Pedal constructor
 function Pedal(name, brand, type, link, image, info){
   this.name = name;
@@ -8,6 +12,7 @@ function Pedal(name, brand, type, link, image, info){
   this.link = link;
   this.image = image;
   this.info = info;
+  this.artists = [];
 }
 
 // Artist constructor
@@ -19,9 +24,6 @@ function Artist(name, group, pedals, image, info) {
   this.info = info;
 }
 
-// Object arrays
-var pedalsArray = [];
-var artistsArray = [];
 
 // Pedal variables
 
@@ -71,13 +73,21 @@ artistsArray.push(new Artist ("Corin Tucker", "Sleater-Kinney", ["Boss GE-7 Equa
 
 artistsArray.push(new Artist ("Rob Crow", "Pinback", ["Electro-Harmonix Small Clone"], "img/artists/RobCrow.jpg", "Rob Crow, Jr. is an American singer and multi-instrumentalist from San Diego, California known for the long list of bands and projects he is associated with, mostly in the genres of indie rock and math rock. He is best known for his involvement with the bands Pinback (co-led by Zach Smith from Three Mile Pilot), Heavy Vegetable, Physics, Optiganally Yours and Thingy; in addition he has also led or leads the bands Advertising, Alpha Males, Altron Tube, Cthugha, Fantasy Mission Force, Goblin Cock, Holy Smokes, The Ladies, Other Men and Remote Action Sequence Project, as well as performing and releasing solo records under his own name and under the name Snotnose."));
 
-
 artistsArray.push(new Artist ("Donald Glover", "Childish Gambino", ["Maestro FZ-1 Fuzz-Tone"], "img/artists/ChildishGambino.jpg", "Donald Glover is an American actor, writer, producer, director, comedian, rapper, DJ, singer, and songwriter. He performs as a stage artist under the stage name Childish Gambino, and as a disc jockey, he performs under the name mcDJ. After several self-released albums and mixtapes, Glover signed to Glassnote Records in 2011. He released his first album, Camp, on November 15, 2011 to generally positive reviews. His second studio album, Because the Internet, was released on December 10, 2013. Glover was nominated for two Grammy Awards in 2015, Best Rap Album for Because the Internet and Best Rap Performance for his single 3005. Glover's third album, Awaken, My Love!, was released on December 2, 2016, spawning the hit single Redbone, which peaked at number 12 on the Billboard Hot 100."));
-
 
 artistsArray.push(new Artist("Kevin Shields", "My Bloody Valentine", ["Z. Vex Lo-Fi Loop Junky", "DigiTech Whammy DT", "Boss PN-2 Tremolo/Pan", "Electro-Harmonix Small Clone", "Boss GE-7 Equalizer", "Strymon Big Sky", "DigiTech DigiDelay", "Boss BD-2 Blues Driver", "MXR Phase 90", "Electro-Harmonix Small Stone", "Boss RV-3 Reverb/Delay", "Boss DS-1 Distortion"], "img/artists/KevinShields.jpg", "Kevin Shields is an American-born Irish musician, singer-songwriter, composer and producer, best known as the vocalist and guitarist of the alternative rock band My Bloody Valentine. Shields performed in a number of small unsuccessful bands in Dublin, Ireland, as a teenager, before forming My Bloody Valentine with drummer Colm Ó Cíosóig in 1983. Although initially experiencing limited success, the band would later become extremely influential on the evolution of alternative rock with their two original studio albums Isn't Anything (1988) and Loveless (1991), both of which pioneered a subgenre known as shoegazing. Shields' texturised guitar sound and his experimentation with his guitars' tremolo systems resulted in the creation of the glide guitar technique, which became a recognisable aspect of My Bloody Valentine's sound, along with his meticulous production techniques."));
 
 // Back end functions
+artistsArray.map(function(artist) {
+  artist.pedals.map(function(pedalName) {
+    pedalsArray.map(function(pedal) {
+      if (pedal.name === pedalName) {
+        pedal.artists.push(artist.name);
+      };
+    });
+  });
+});
+
 function pedalClick(text) {
   pedalsArray.map(function(pedal) {
     if (pedal.name === text) {
@@ -86,54 +96,71 @@ function pedalClick(text) {
   });
 };
 
+function artistClick(text) {
+  artistsArray.map(function(artist) {
+    if (artist.name === text) {
+      makeArtistOutput(artist);
+    };
+  });
+};
+
 // Front end functions
 function makePedalOutput(foundPedal) {
-  $("#pedal-info-output").html('<div class="removable-main"><li>' + foundPedal.info + '</li>' + '<li><a href="' + foundPedal.link + '" target="_blank">Click here for more information</a></li>' + '<li><img src="' + foundPedal.image + '" alt="' + foundPedal.name + '"></div>');
+  $("#info-output").html('<div class="removable-main"><li>' + foundPedal.info + '</li>' +
+                                  '<li><a href="' + foundPedal.link + '" target="_blank">Click here for more information</a></li>' + '<li><img src="' + foundPedal.image + '" alt="' + foundPedal.name + '"></li>' +
+                                  '<h3>These artists use this effect pedal:</h3>' +
+                                  '<ul id="pedal-user-output" class="artist-click clickable">' +
+                                  '</ul>' +
+                                '</div>'
+                              );
+
+  foundPedal.artists.map(function(artist) {
+    $('#pedal-user-output').append('<li>' + artist + '</li>');
+  });
+  $('.artist-click').on('click', 'li', function() {
+    artistClick($(this).text());
+  });
 }
 
+function makeArtistOutput(foundArtist) {
+  $('#info-output').html('<div class="removable-main">' +
+                                  '<li>' + foundArtist.name + ' from ' + foundArtist.group + '</li>' +
+                                  '<li><img src="' + foundArtist.image + '" alt="' + foundArtist.name + '">' +
+                                  '<li>' + foundArtist.info + '</li>' +
+                                  '<h3>' + foundArtist.name + ' uses the following pedals:</h3></li>' +
+                                  '<ul id="artist-pedal-output" class="pedal-click clickable">' +
+                                  '</ul>' +
+                                '</div>'
+                              );
+
+  foundArtist.pedals.map(function(pedal) {
+    $('#artist-pedal-output').append('<li>' + pedal + '</li>');
+  });
+  $('.pedal-click').on('click', 'li', function() {
+    pedalClick($(this).text());
+  });
+}
 
 // Front end logic
 $(function() {
 
-  $("#pedals").click(function() {
-    $(".removable-sidebar").remove();
+  $('#pedals').click(function() {
+    $('.removable-sidebar').remove();
     pedalsArray.map(function(pedal) {
-      $("#pedal-list").append("<li class='clickable removable-sidebar'>" + pedal.name + "</li>");
-    });
-    $(".pedal-click").on('click', 'li', function() {
-      pedalClick($(this).text());
-    });
-  });
-
-  $("#artists").click(function(){
-    $(".removable-sidebar").remove();
-    artistsArray.map(function(artist) {
-      $("#artist-list").append("<li class='clickable removable-sidebar'>" + artist.name + "</li>")
-    });
-  });
-
-  $("#artist-list").on('click', 'li', function() {
-    $(".removable-main").remove();
-    var artistName = $(this).text();
-    artistsArray.map(function(artist) {
-      if (artist.name === artistName) {
-        $("#artist-info-output").html('<div class="removable-main">' +
-                                        '<li>' + artist.name + ' from ' + artist.group + '</li>' +
-                                        '<li><img src="' + artist.image + '" alt="' + artist.name + '">' +
-                                        '<li>' + artist.info + '</li>' +
-                                        '<h3>' + artist.name + ' uses the following pedals:</h3></li>' +
-                                        '<ul id="artist-pedal-output" class="pedal-click clickable">' +
-                                        '</ul>' +
-                                        '</div>'
-        );
-        artist.pedals.map(function(artistPedal) {
-          $("#artist-pedal-output").append("<li>" + artistPedal + "</li>");
-        });
-      };
+      $('#pedal-list').append('<li class="clickable removable-sidebar">' + pedal.name + '</li>');
     });
     $('.pedal-click').on('click', 'li', function() {
-      $('.removable-main').remove();
       pedalClick($(this).text());
+    });
+  });
+
+  $('#artists').click(function(){
+    $('.removable-sidebar').remove();
+    artistsArray.map(function(artist) {
+      $('#artist-list').append('<li class="clickable removable-sidebar">' + artist.name + '</li>')
+    });
+    $('.artist-click').on('click', 'li', function() {
+      artistClick($(this).text());
     });
   });
 });
