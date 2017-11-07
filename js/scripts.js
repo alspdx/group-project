@@ -19,10 +19,19 @@ function Artist(name, group, pedals, image, info) {
   this.info = info;
 }
 
+//User constructor
+function User(name, group, info, pedals, artists) {
+  this.name = name;
+  this.group = group;
+  this.info = info;
+  this.pedals = pedals;
+  this.artists = artists;
+}
+
 // Object arrays
 var pedalsArray = [];
 var artistsArray = [];
-
+var usersArray = [];
 // Pedal variables
 
 pedalsArray.push(new Pedal ("Boss DS-1 Distortion", "Boss", "Distortion", "http://www.effectsdatabase.com/model/boss/compact/ds1", "img/pedals/bossDS1.jpg", "This is the classic distortion pedal launched a million guitar solos. Known by professional guitarists the world over as 'that orange BOSS distortion,' the DS-1 Distortion is still in production to this day, thanks to its distinct growling-yet-warm tone and bite. Plug it into your favorite stack and see what we mean."));
@@ -77,6 +86,8 @@ artistsArray.push(new Artist ("Donald Glover", "Childish Gambino", ["Maestro FZ-
 
 artistsArray.push(new Artist("Kevin Shields", "My Bloody Valentine", ["Z. Vex Lo-Fi Loop Junky", "DigiTech Whammy DT", "Boss PN-2 Tremolo/Pan", "Electro-Harmonix Small Clone", "Boss GE-7 Equalizer", "Strymon Big Sky", "DigiTech DigiDelay", "Boss BD-2 Blues Driver", "MXR Phase 90", "Electro-Harmonix Small Stone", "Boss RV-3 Reverb/Delay", "Boss DS-1 Distortion"], "img/artists/KevinShields.jpg", "Kevin Shields is an American-born Irish musician, singer-songwriter, composer and producer, best known as the vocalist and guitarist of the alternative rock band My Bloody Valentine. Shields performed in a number of small unsuccessful bands in Dublin, Ireland, as a teenager, before forming My Bloody Valentine with drummer Colm Ó Cíosóig in 1983. Although initially experiencing limited success, the band would later become extremely influential on the evolution of alternative rock with their two original studio albums Isn't Anything (1988) and Loveless (1991), both of which pioneered a subgenre known as shoegazing. Shields' texturised guitar sound and his experimentation with his guitars' tremolo systems resulted in the creation of the glide guitar technique, which became a recognisable aspect of My Bloody Valentine's sound, along with his meticulous production techniques."));
 
+usersArray.push(new User("Michael Pinaud", "LDX-ROE", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", ["Electro-Harmonix Small Clone", "Boss GE-7 Equalizer", "Strymon Big Sky", "DigiTech DigiDelay"], ["Kevin Shields", "Chelsea Wolfe"]));
+
 // Back end functions
 function pedalClick(text) {
   pedalsArray.map(function(pedal) {
@@ -109,6 +120,43 @@ $(function() {
     $(".removable-sidebar").remove();
     artistsArray.map(function(artist) {
       $("#artist-list").append("<li class='clickable removable-sidebar'>" + artist.name + "</li>")
+    });
+  });
+
+  $("#users").click(function(){
+    $(".removable-sidebar").remove();
+    usersArray.map(function(user) {
+      $("#users-list").append("<li class='clickable removeable-sidebar'>" + user.name + "</li>")
+    });
+  });
+
+  $("#users-list").on('click', 'li', function(){
+    $(".removeable-main").remove();
+    var userName = $(this).text();
+    usersArray.map(function(user) {
+      if (user.name === userName) {
+        $("#user-info-output").html('<div class="removable-main">' +
+                                        '<li>' + user.name + ' from ' + user.group + '</li>' +
+                                        '<li>' + user.info + '</li>' +
+                                        '<h3>' + user.name + ' uses the following pedals:</h3>' +
+                                        '<ul id="user-pedal-output" class="pedal-click clickable">' +
+                                        '</ul>' +
+                                        '<h3>' + ' Follows: ' + '</h3>' +
+                                        '<ul id="user-artist-output" class="artist-click clickable">' + '</ul>' +
+                                        '</div>'
+        );
+        user.pedals.map(function(userPedal) {
+          $("#user-pedal-output").append("<li>" + userPedal + "</li>");
+        });
+        user.artists.map(function(userArtist) {
+          $("#user-artist-output").append("<li>" + userArtist + "</li>");
+        });
+      };
+    });
+    $('.pedal-click').on('click', 'li', function() {
+      $('.removable-main').remove();
+      pedalClick($(this).text());
+    });
     });
   });
 
