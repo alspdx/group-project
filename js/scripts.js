@@ -3,6 +3,7 @@
 // Object arrays
 var pedalsArray = [];
 var artistsArray = [];
+var usersArray = [];
 
 // Pedal constructor
 function Pedal(name, brand, type, link, image, info){
@@ -24,6 +25,15 @@ function Artist(name, group, pedals, image, info) {
   this.info = info;
 }
 
+
+//User constructor
+function User(name, group, info, pedals, artists) {
+  this.name = name;
+  this.group = group;
+  this.info = info;
+  this.pedals = pedals;
+  this.artists = artists;
+}
 
 // Pedal variables
 
@@ -76,6 +86,8 @@ artistsArray.push(new Artist ("Rob Crow", "Pinback", ["Electro-Harmonix Small Cl
 artistsArray.push(new Artist ("Donald Glover", "Childish Gambino", ["Maestro FZ-1 Fuzz-Tone"], "img/artists/ChildishGambino.jpg", "Donald Glover is an American actor, writer, producer, director, comedian, rapper, DJ, singer, and songwriter. He performs as a stage artist under the stage name Childish Gambino, and as a disc jockey, he performs under the name mcDJ. After several self-released albums and mixtapes, Glover signed to Glassnote Records in 2011. He released his first album, Camp, on November 15, 2011 to generally positive reviews. His second studio album, Because the Internet, was released on December 10, 2013. Glover was nominated for two Grammy Awards in 2015, Best Rap Album for Because the Internet and Best Rap Performance for his single 3005. Glover's third album, Awaken, My Love!, was released on December 2, 2016, spawning the hit single Redbone, which peaked at number 12 on the Billboard Hot 100."));
 
 artistsArray.push(new Artist("Kevin Shields", "My Bloody Valentine", ["Z. Vex Lo-Fi Loop Junky", "DigiTech Whammy DT", "Boss PN-2 Tremolo/Pan", "Electro-Harmonix Small Clone", "Boss GE-7 Equalizer", "Strymon Big Sky", "DigiTech DigiDelay", "Boss BD-2 Blues Driver", "MXR Phase 90", "Electro-Harmonix Small Stone", "Boss RV-3 Reverb/Delay", "Boss DS-1 Distortion"], "img/artists/KevinShields.jpg", "Kevin Shields is an American-born Irish musician, singer-songwriter, composer and producer, best known as the vocalist and guitarist of the alternative rock band My Bloody Valentine. Shields performed in a number of small unsuccessful bands in Dublin, Ireland, as a teenager, before forming My Bloody Valentine with drummer Colm Ó Cíosóig in 1983. Although initially experiencing limited success, the band would later become extremely influential on the evolution of alternative rock with their two original studio albums Isn't Anything (1988) and Loveless (1991), both of which pioneered a subgenre known as shoegazing. Shields' texturised guitar sound and his experimentation with his guitars' tremolo systems resulted in the creation of the glide guitar technique, which became a recognisable aspect of My Bloody Valentine's sound, along with his meticulous production techniques."));
+
+usersArray.push(new User("Michael Pinaud", "LDX-ROE", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", ["Electro-Harmonix Small Clone", "Boss GE-7 Equalizer", "Strymon Big Sky", "DigiTech DigiDelay"], ["Kevin Shields", "Chelsea Wolfe"]));
 
 // Back end functions
 artistsArray.map(function(artist) {
@@ -153,7 +165,7 @@ $(function() {
       pedalClick($(this).text());
     });
   });
-
+  
   $('#artists').click(function(){
     $('.removable-sidebar').remove();
     artistsArray.map(function(artist) {
@@ -163,4 +175,44 @@ $(function() {
       artistClick($(this).text());
     });
   });
+
+
+  $("#users").click(function(){
+    $(".removable-sidebar").remove();
+    usersArray.map(function(user) {
+      $("#users-list").append("<li class='clickable removeable-sidebar'>" + user.name + "</li>")
+    });
+  });
+
+  $("#users-list").on('click', 'li', function(){
+    $(".removeable-main").remove();
+    var userName = $(this).text();
+    usersArray.map(function(user) {
+      if (user.name === userName) {
+        $("#user-info-output").html('<div class="removable-main">' +
+                                        '<li>' + user.name + ' from ' + user.group + '</li>' +
+                                        '<li>' + user.info + '</li>' +
+                                        '<h3>' + user.name + ' uses the following pedals:</h3>' +
+                                        '<ul id="user-pedal-output" class="pedal-click clickable">' +
+                                        '</ul>' +
+                                        '<h3>' + ' Follows: ' + '</h3>' +
+                                        '<ul id="user-artist-output" class="artist-click clickable">' + '</ul>' +
+                                        '</div>'
+        );
+        user.pedals.map(function(userPedal) {
+          $("#user-pedal-output").append("<li>" + userPedal + "</li>");
+        });
+        user.artists.map(function(userArtist) {
+          $("#user-artist-output").append("<li>" + userArtist + "</li>");
+        });
+      };
+    });
+    $('.pedal-click').on('click', 'li', function() {
+      $('.removable-main').remove();
+      pedalClick($(this).text());
+    });
+    });
+  });
 });
+
+
