@@ -63,9 +63,10 @@ li {
 
 .info-image {
   width: 400px;
-  height: 600px;
+  height: auto;
   object-fit: cover;
   float: right;
+  margin: 0px 50px;
 }
 
 #add-users {
