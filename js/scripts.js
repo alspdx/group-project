@@ -32,8 +32,8 @@ function User(name, group, info, pedals, artists) {
   this.info = info;
   this.pedals = pedals;
   this.artists = artists;
-
 }
+
 
 // Pedal variables
 pedalsArray.push(new Pedal ("Boss DS-1 Distortion", "Boss", "Distortion", "http://www.effectsdatabase.com/model/boss/compact/ds1", image, "This is the classic distortion pedal launched a million guitar solos. Known by professional guitarists the world over as 'that orange BOSS distortion,' the DS-1 Distortion is still in production to this day, thanks to its distinct growling-yet-warm tone and bite. Plug it into your favorite stack and see what we mean."));
@@ -376,16 +376,34 @@ function makeUserOutput(foundUser) {
   attachClick();
 }
 
-// Front end logic
-$(function() {
-  //when add user is clicked
-  $("#add-users").click(function(){
-    pedalsArray.map(function(pedal) {
-      $(".add-pedal-select").append('<option value="' + pedal.name + '">' + pedal.name + '</option>');
-    });
-    artistsArray.map(function(artist) {
-      $(".add-artist-select").append('<option value="' + artist.name + '">' + artist.name + '</option>');
-    });
+function makeFormOutput() {
+  $('#info-output').html('<form id="contact-input" class="removable-main">' +
+                              '<div class="form-group">' +
+                              '<input type="text" class="form-control" placeholder="Name" id="name">' +
+                              '<input type="text" class="form-control" placeholder="Band/Group" id="group">' +
+                              '<input type="text" class="form-control" placeholder="About me" id="about-me">' +
+                              '<div id="add-pedals">' +
+                              '<select class="custom-select form control col add-pedal add-pedal-select" required>' +
+                              '<option>' + '</option>' +
+                              '</select>' +
+                              '</div>' +
+                              '<button type="button" id="add-another-pedal">Add another pedal</button>' +
+                              '<div id="add-artists">' +
+                              '<select class="custom-select form control col add-artist add-artist-select" required>' +
+                              '<option value="">' + '</option>' +
+                              '</select>' +
+                              '</div>' +
+                              '<button type="button" id="add-another-artist">Follow another artist</button>' +
+                              '</div>' +
+                              '<button id="contact-info" type="submit" class="btn btn-outline-black btn-lg btn-block head">Submit</button>' +
+                              '</form>'
+                            );
+
+  pedalsArray.map(function(pedal) {
+    $(".add-pedal-select").append('<option value="' + pedal.name + '">' + pedal.name + '</option>');
+  });
+  artistsArray.map(function(artist) {
+    $(".add-artist-select").append('<option value="' + artist.name + '">' + artist.name + '</option>');
   });
 
   //when add another pedal button is clicked
@@ -410,6 +428,31 @@ $(function() {
     });
   })
 
+  $("#contact-input").submit(function(event){
+    event.preventDefault();
+    var userName = $("input#name").val();
+    var userGroup = $("input#group").val();
+    var userAboutMe = $("input#about-me").val();
+    var userPedals = [];
+    var userArtists = [];
+    $('.add-pedal').each(function() {
+      var inputtedPedal = $(this).val();
+      userPedals.push(inputtedPedal);
+    })
+    $('.add-artist').each(function() {
+      var inputtedArtist = $(this).val();
+      userArtists.push(inputtedArtist);
+    })
+    var newUser = new User(userName, userGroup, userAboutMe, userPedals, userArtists);
+    usersArray.push(newUser);
+    $("#users-list").append("<li class='clickable removable-sidebar'>" + newUser.name + "</li>");
+    attachClick();
+  });
+
+}
+
+// Front end logic
+$(function() {
   $('#pedals').click(function() {
     $('.removable-sidebar').remove();
     pedalsArray.map(function(pedal) {
@@ -435,27 +478,10 @@ $(function() {
   });
 
   $('#add-users').click(function() {
-    $('#new-user-form').slideDown();
+    $(".removable-sidebar").remove();
+    usersArray.map(function(user) {
+      $("#users-list").append("<li class='clickable removable-sidebar'>" + user.name + "</li>");
+    });
+    makeFormOutput();
   })
-
-  $("#contact-input").submit(function(event){
-    event.preventDefault();
-    var userName = $("input#name").val();
-    var userGroup = $("input#group").val();
-    var userAboutMe = $("input#about-me").val();
-    var userPedals = [];
-    var userArtists = [];
-    $('.add-pedal').each(function() {
-      var inputtedPedal = $(this).val();
-      userPedals.push(inputtedPedal);
-    })
-    $('.add-artist').each(function() {
-      var inputtedArtist = $(this).val();
-      userArtists.push(inputtedArtist);
-    })
-    var newUser = new User(userName, userGroup, userAboutMe, userPedals, userArtists);
-    usersArray.push(newUser);
-    console.log(newUser);
-    $('#new-user-form').slideDown();
-  });
 });
