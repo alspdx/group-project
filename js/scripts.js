@@ -5,6 +5,9 @@ var pedalsArray = [];
 var artistsArray = [];
 var usersArray = [];
 
+
+
+
 // Pedal constructor
 function Pedal(name, brand, type, link, image, info){
   this.name = name;
@@ -85,7 +88,37 @@ artistsArray.push(new Artist ("Donald Glover", "Childish Gambino", ["Maestro FZ-
 
 artistsArray.push(new Artist("Kevin Shields", "My Bloody Valentine", ["Z. Vex Lo-Fi Loop Junky", "DigiTech Whammy DT", "Boss PN-2 Tremolo/Pan", "Electro-Harmonix Small Clone", "Boss GE-7 Equalizer", "Strymon Big Sky", "DigiTech DigiDelay", "Boss BD-2 Blues Driver", "MXR Phase 90", "Electro-Harmonix Small Stone", "Boss RV-3 Reverb/Delay", "Boss DS-1 Distortion"], "img/artists/KevinShields.jpg", "Kevin Shields is an American-born Irish musician, singer-songwriter, composer and producer, best known as the vocalist and guitarist of the alternative rock band My Bloody Valentine. Shields performed in a number of small unsuccessful bands in Dublin, Ireland, as a teenager, before forming My Bloody Valentine with drummer Colm Ó Cíosóig in 1983. Although initially experiencing limited success, the band would later become extremely influential on the evolution of alternative rock with their two original studio albums Isn't Anything (1988) and Loveless (1991), both of which pioneered a subgenre known as shoegazing. Shields' texturised guitar sound and his experimentation with his guitars' tremolo systems resulted in the creation of the glide guitar technique, which became a recognisable aspect of My Bloody Valentine's sound, along with his meticulous production techniques."));
 
+artistsArray.push(new Artist("Adrian Belew", "King Crimson", [""], "img/artists/AdrianBelew.jpg", "Adrian Belew is an American musician, songwriter, and record producer. A multi-instrumentalist primarily known as a guitarist and singer, Belew is noted for his unusual, impressionistic approach to guitar playing, which, rather than relying on standard instrumental tones, often resembles sound effects or noises made by animals and machines."));
+
+artistsArray.push(new Artist("Aaron Dessner", "The National", [""], "img/artists/AaronDessner.jpg", "Aaron Brooking Dessner (born April 23, 1976) is an American songwriter, multi-instrumentalist and record producer. He is best known as a member of the rock band The National. Aaron writes the majority of the music for The National, collaborating on songs with singer Matt Berninger who writes their lyrics."));
+
+artistsArray.push(new Artist("Tobin Sprout", "Guided By Voices", [""], "img/artists/TobinSprout.jpg", "Tobin Sprout is an American artist and musician. He is best known for his contributions as a member of indie rock group Guided by Voices."));
+
+artistsArray.push(new Artist("Thurston Moore", "Sonic Youth", [""], "img/artists/ThurstonMoore.jpg", "Thurston Moore is an American musician best known as a singer, songwriter and guitarist of Sonic Youth. He has also participated in many solo and group collaborations outside Sonic Youth, as well as running the Ecstatic Peace! record label. Moore was ranked 34th in Rolling Stone's 2004 edition of the 100 Greatest Guitarists of All Time. In May 2012, Spin published a staff-selected top 100 ranking Moore and his Sonic Youth bandmate Lee Ranaldo together on number 1."));
+
+artistsArray.push(new Artist("Annie Clark", "St. Vincent", [""], "img/artists/StVincent.jpg", "Annie Clark, better known by her stage name St. Vincent, is an American musician, singer-songwriter, and multi-instrumentalist. After studying at Berklee College of Music for three years, she began her music career as a member of the Polyphonic Spree. Clark was also a member of Sufjan Stevens's touring band before forming her own band in 2006."));
+
+artistsArray.push(new Artist("Michael Gira", "Swans", [""], "img/artists/MichaelGira.jpg", "Michael Gira, is an American singer-songwriter, musician, author and artist. He is the main force behind the New York City musical group Swans and fronted Angels of Light. He is also the founder of Young God Records."));
+
+artistsArray.push(new Artist("Doug Martsch", "Built to Spill", [""], "img/artists/DougMartsch.jpg", "Doug Martsch is an American singer and musician. He is best known for his distinctive vocals and guitar playing style in the band Built to Spill."));
+
+artistsArray.push(new Artist ("Ryan Adams", "Whiskeytown", [""], "img/artists/RyanAdams.jpg", "Ryan Adams (born November 5, 1974) is an American singer-songwriter, musician, multi-instrumentalist, record producer and poet. He is best known for his solo career, during which he has released sixteen albums, and as a former member of alternative country band Whiskeytown, with whom he recorded three studio albums."));
+
+artistsArray.push(new Artist ("Thom Yorke", "Radiohead", [""], "img/artists/ThomYorke.jpg", "Thomas Edward Yorke is an English musician and composer best known as the singer and principal songwriter of the alternative rock band Radiohead. A multi-instrumentalist, Yorke mainly plays guitar and piano and works extensively with synthesisers, sequencers and programming. He is known for his falsetto vocals; in 2008, Rolling Stone ranked him the 66th greatest singer of all time."));
+
+artistsArray.push(new Artist ("Rachel Goswell", "Slowdive", [""], "img/artists/RachelGoswell.jpg", "Rachel Goswell is an English singer-songwriter and musician who rose to prominence as vocalist and guitarist of the shoegaze band Slowdive, which formed in 1989. Goswell, along with Neil Halstead, Ian McCutcheon and former Chapterhouse member Simon Rowe became Mojave 3 when Slowdive transitioned to a more country/folk rock style. She released a solo album in 2004, titled Waves Are Universal on 4AD Records."));
+
+artistsArray.push(new Artist ("Matt Pike", "Sleep", [""], "img/artists/MattPike.jpg", "Matt Pike is an American metal musician best known as the guitarist of the influential doom metal band Sleep and the frontman of High on Fire. He is well known in the metal scene for never wearing a shirt during live performances."));
+
+artistsArray.push(new Artist ("Buzz Osborne", "Melvins", [""], "img/artists/BuzzOsborne.jpg", "Buzz Osborne, also known as King Buzzo, is an American guitarist, vocalist and songwriter. He is a founding member of the Melvins, as well as Fantômas and Venomous Concept."));
+
+
+
+
+
 usersArray.push(new User("Michael Pinaud", "LDX-ROE", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", ["Electro-Harmonix Small Clone", "Boss GE-7 Equalizer", "Strymon Big Sky", "DigiTech DigiDelay"], ["Kevin Shields", "Chelsea Wolfe"]));
+
+
 
 // Back end functions
 artistsArray.map(function(artist) {
@@ -98,6 +131,30 @@ artistsArray.map(function(artist) {
   });
 });
 
+artistsArray.sort(function(a, b) {
+  if (a.name < b.name)
+    return -1;
+  if (a.name > b.name)
+    return 1;
+  return 0;
+});
+
+pedalsArray.sort(function(a, b) {
+  if (a.name < b.name)
+    return -1;
+  if (a.name > b.name)
+    return 1;
+  return 0;
+});
+
+usersArray.sort(function(a, b) {
+  if (a.name < b.name)
+    return -1;
+  if (a.name > b.name)
+    return 1;
+  return 0;
+});
+
 function pedalClick(text) {
   pedalsArray.map(function(pedal) {
     if (pedal.name === text) {
@@ -105,6 +162,7 @@ function pedalClick(text) {
     };
   });
 };
+
 
 function artistClick(text) {
   artistsArray.map(function(artist) {
@@ -121,6 +179,8 @@ function userClick(text) {
     };
   });
 };
+
+
 
 // Front end functions
 function attachClick() {
