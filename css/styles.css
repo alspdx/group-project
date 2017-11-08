@@ -17,8 +17,8 @@ body {
   color: #fff;
 }
 
-#new-user-form {
-  /*display: none;*/
+.hide {
+  display: none;
 }
 
 .clickable:hover {

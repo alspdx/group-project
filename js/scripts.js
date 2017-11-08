@@ -250,6 +250,10 @@ $(function() {
     attachClick();
   });
 
+  $('#add-users').click(function() {
+    $('#new-user-form').slideDown();
+  })
+
   $("#contact-input").submit(function(event){
     event.preventDefault();
     var userName = $("input#name").val();
@@ -268,5 +272,6 @@ $(function() {
     var newUser = new User(userName, userGroup, userAboutMe, userPedals, userArtists);
     usersArray.push(newUser);
     console.log(newUser);
+    $('#new-user-form').slideDown();
   });
 });
