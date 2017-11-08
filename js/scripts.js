@@ -36,31 +36,136 @@ function User(name, group, info, pedals, artists) {
 }
 
 // Pedal variables
-pedalsArray.push(new Pedal ("Boss DS-1 Distortion", "Boss", "Distortion", "http://www.effectsdatabase.com/model/boss/compact/ds1", "img/pedals/bossDS1.jpg", "This is the classic distortion pedal launched a million guitar solos. Known by professional guitarists the world over as 'that orange BOSS distortion,' the DS-1 Distortion is still in production to this day, thanks to its distinct growling-yet-warm tone and bite. Plug it into your favorite stack and see what we mean."));
+pedalsArray.push(new Pedal ("Boss DS-1 Distortion", "Boss", "Distortion", "http://www.effectsdatabase.com/model/boss/compact/ds1", image, "This is the classic distortion pedal launched a million guitar solos. Known by professional guitarists the world over as 'that orange BOSS distortion,' the DS-1 Distortion is still in production to this day, thanks to its distinct growling-yet-warm tone and bite. Plug it into your favorite stack and see what we mean."));
 
-pedalsArray.push(new Pedal ("Boss RV-3 Reverb/Delay", "Boss", "Reverb/Delay", "http://www.effectsdatabase.com/model/boss/compact/rv3#related", "img/pedals/bossRV3.jpg", "The RV-3 is a popular professional-quality pedal that can produce reverb, delay or both. It offers four different high-density reverb modes plus three delay modes offering delay times up to 2,000ms."));
+pedalsArray.push(new Pedal ("Boss RV-3 Reverb/Delay", "Boss", "Reverb", "http://www.effectsdatabase.com/model/boss/compact/rv3#related", image, "The RV-3 is a popular professional-quality pedal that can produce reverb, delay or both. It offers four different high-density reverb modes plus three delay modes offering delay times up to 2,000ms."));
 
-pedalsArray.push(new Pedal ("Electro-Harmonix Small Stone", "Electro-Harmonix", "Phaser", "http://www.effectsdatabase.com/model/eh/smallstone#forum", "img/pedals/ElectroSmallStone.jpg", "The Small Stone's full bodied, three dimensional phasing adds a special swirl to every musical style. Blues boys and babes dig its rapidly rotating speaker effect while Country players use it to add seasoning to their chicken' pickin'. Metal-heads and Industrialists dig the Stone's jet plane woosh. No matter what your musical pleasure, the Small Stone is guaranteed to increase it!"));
+pedalsArray.push(new Pedal ("Electro-Harmonix Small Stone", "Electro-Harmonix", "Phaser", "http://www.effectsdatabase.com/model/eh/smallstone#forum", image, "The Small Stone's full bodied, three dimensional phasing adds a special swirl to every musical style. Blues boys and babes dig its rapidly rotating speaker effect while Country players use it to add seasoning to their chicken' pickin'. Metal-heads and Industrialists dig the Stone's jet plane woosh. No matter what your musical pleasure, the Small Stone is guaranteed to increase it!"));
 
-pedalsArray.push(new Pedal ("MXR Phase 90", "MXR", "Phaser", "http://www.effectsdatabase.com/model/mxr/m101", "img/pedals/MXRphase90.jpg", "This device has found its way into many of Eddie Van Halen's recordings, adding a shimmery velocity to lead passages or a more dramatic swoosh to muted strumming. Not just for guitars; it works well with bass, keyboards and even vocals. Vary the speed from a subtle, long cycle to a fast, watery warble...and myriad vintage vibrations in between."));
+pedalsArray.push(new Pedal ("MXR Phase 90", "MXR", "Phaser", "http://www.effectsdatabase.com/model/mxr/m101", image, "This device has found its way into many of Eddie Van Halen's recordings, adding a shimmery velocity to lead passages or a more dramatic swoosh to muted strumming. Not just for guitars; it works well with bass, keyboards and even vocals. Vary the speed from a subtle, long cycle to a fast, watery warble...and myriad vintage vibrations in between."));
 
-pedalsArray.push(new Pedal ("Boss BD-2 Blues Driver", "Boss", "Distortion/Overdrive", "http://www.effectsdatabase.com/model/boss/compact/bd2", "img/pedals/bossBD2.jpg", "The BD-2 Blues Driver delivers the creamy, yet crunchy sound associated with great blues guitar. This popular pedal provides instant access to the kind of warm overdrive and emotive distortion usually reserved for 30-year-old tube amps."))
+pedalsArray.push(new Pedal ("Boss BD-2 Blues Driver", "Boss", "Distortion/Overdrive", "http://www.effectsdatabase.com/model/boss/compact/bd2", image, "The BD-2 Blues Driver delivers the creamy, yet crunchy sound associated with great blues guitar. This popular pedal provides instant access to the kind of warm overdrive and emotive distortion usually reserved for 30-year-old tube amps."))
 
-pedalsArray.push(new Pedal("DigiTech DigiDelay", "DigiTech", "Delay", "http://www.effectsdatabase.com/model/digitech/x/xdd", "img/pedals/DigiDelay.jpg", "The DigiDelay™ pedal gives you loads of delay time, with up to 4 seconds of delay available. This is more than is found in many studio-quality, rack-mounted delay processors. And that's just the beginning! The DigiDelay™ also lets you select various delay types such as stereo ping pong and tape delay, and other phat delay sounds, plus tap tempo so you can set the delay time exactly to the beat (just hold, then tap the footswitch with your foot). Controls feature Level, Repeat, Time, and Mode. Outputs for both pedals include Out 1 (Mono) and Out 2 for stereo operation."));
+pedalsArray.push(new Pedal("DigiTech DigiDelay", "DigiTech", "Delay", "http://www.effectsdatabase.com/model/digitech/x/xdd", image, "The DigiDelay™ pedal gives you loads of delay time, with up to 4 seconds of delay available. This is more than is found in many studio-quality, rack-mounted delay processors. And that's just the beginning! The DigiDelay™ also lets you select various delay types such as stereo ping pong and tape delay, and other phat delay sounds, plus tap tempo so you can set the delay time exactly to the beat (just hold, then tap the footswitch with your foot). Controls feature Level, Repeat, Time, and Mode. Outputs for both pedals include Out 1 (Mono) and Out 2 for stereo operation."));
 
-pedalsArray.push(new Pedal ("Strymon Big Sky", "Strymon", "Reverb", "http://www.effectsdatabase.com/model/strymon/bigsky", "img/pedals/StrymonBigSky.jpg", "Plug into BigSky and instantly lift your sound into the stratosphere. The world below you fades into the distance, and you're elevated into a glow of lush, glorious, radiant reverbs. To create a reverb experience as natural, beautiful, and immersive as BigSky required tremendous feats of sound engineering and artistic imagination. Using the fundamentals of acoustical science as our beacon, we carefully studied and scientifically analyzed reverb technology from the past fifty years. We faithfully captured the essence of these classic sounds, and forged ahead to dream up our vision of reverbs from the future."))
+pedalsArray.push(new Pedal ("Strymon Big Sky", "Strymon", "Reverb", "http://www.effectsdatabase.com/model/strymon/bigsky", image, "Plug into BigSky and instantly lift your sound into the stratosphere. The world below you fades into the distance, and you're elevated into a glow of lush, glorious, radiant reverbs. To create a reverb experience as natural, beautiful, and immersive as BigSky required tremendous feats of sound engineering and artistic imagination. Using the fundamentals of acoustical science as our beacon, we carefully studied and scientifically analyzed reverb technology from the past fifty years. We faithfully captured the essence of these classic sounds, and forged ahead to dream up our vision of reverbs from the future."))
 
-pedalsArray.push(new Pedal ("Boss GE-7 Equalizer", "Boss", "Equalizer", "http://www.effectsdatabase.com/model/boss/compact/ge7", "img/pedals/bossGE7.jpg", "The GE-7 Equalizer pedal offers seven bands of EQ ranging from 100Hz to 6.4kHz, ideal for guitar sounds, with boost/cut of +/- 15dB per band. This lets you completely control your sound and eliminate unwanted feedback, particularly when connected after a distortion effect."));
+pedalsArray.push(new Pedal ("Boss GE-7 Equalizer", "Boss", "Equalizer", "http://www.effectsdatabase.com/model/boss/compact/ge7", image, "The GE-7 Equalizer pedal offers seven bands of EQ ranging from 100Hz to 6.4kHz, ideal for guitar sounds, with boost/cut of +/- 15dB per band. This lets you completely control your sound and eliminate unwanted feedback, particularly when connected after a distortion effect."));
 
-pedalsArray.push (new Pedal ("Electro-Harmonix Small Clone", "Electro-Harmonix", "Chorus", "http://www.effectsdatabase.com/model/eh/smallclone", "img/pedals/ElectroSmallClone.jpg", "The classic chorus! Analog chorus pedal popularized by Kurt Cobain. The finest analog chorus sounds: from clear, rich and dimensional to warm pulsating warbles, can be intensified with the Depth Control. Simple tweaks generate exciting doubling effects. Chiming 12-string tone, or Leslie-like warbles."));
+pedalsArray.push (new Pedal ("Electro-Harmonix Small Clone", "Electro-Harmonix", "Chorus", "http://www.effectsdatabase.com/model/eh/smallclone", image, "The classic chorus! Analog chorus pedal popularized by Kurt Cobain. The finest analog chorus sounds: from clear, rich and dimensional to warm pulsating warbles, can be intensified with the Depth Control. Simple tweaks generate exciting doubling effects. Chiming 12-string tone, or Leslie-like warbles."));
 
-pedalsArray.push (new Pedal ("Maestro FZ-1 Fuzz-Tone", "Maestro", "Fuzz Distortion", "http://www.effectsdatabase.com/model/maestro/fz1", "img/pedals/maestroFZ1.jpg", "It's been called the greatest Hippie Rock pedal of all time! It's the one, the only, the original Maestro FuzzToneTM . And it's back with the nastiest, most in your face FUZZZZZ you've ever heard. â€¢ If you were alive in 1965, you probably remember the first time you heard the sound that changed rock music forever. It was the sound of the Bad Boys of Rock, The Rolling Stones, with their latest song, Satisfaction. What was that lead guitar sound? It was the Maestro FuzzTone designed and made by Gibson Electronics of Kalamazoo, MI."));
+pedalsArray.push (new Pedal ("Maestro FZ-1 Fuzz-Tone", "Maestro", "Fuzz", "http://www.effectsdatabase.com/model/maestro/fz1", image, "It's been called the greatest Hippie Rock pedal of all time! It's the one, the only, the original Maestro FuzzToneTM . And it's back with the nastiest, most in your face FUZZZZZ you've ever heard. â€¢ If you were alive in 1965, you probably remember the first time you heard the sound that changed rock music forever. It was the sound of the Bad Boys of Rock, The Rolling Stones, with their latest song, Satisfaction. What was that lead guitar sound? It was the Maestro FuzzTone designed and made by Gibson Electronics of Kalamazoo, MI."));
 
-pedalsArray.push (new Pedal ("Boss PN-2 Tremolo/Pan", "Boss", "Tremolo", "http://www.effectsdatabase.com/model/boss/compact/pn2", "img/pedals/bossPN2.jpg", "The tremolo effect is achieved by varying the volume of the original sound cyclically to create a pulsating speaker effect. The PN-2 has a Rate and Depth control in addition to a 4-way Mode switch giving you the options of Pan-sawtooth, Pan-square, Tremolo-sawtooth or Tremolo-square wave. There is an LED light that blinks along with the tempo of the oscillator, so it is easier to dial in rhythmic tremolo in a low light situation."));
+pedalsArray.push (new Pedal ("Boss PN-2 Tremolo/Pan", "Boss", "Tremolo", "http://www.effectsdatabase.com/model/boss/compact/pn2", image, "The tremolo effect is achieved by varying the volume of the original sound cyclically to create a pulsating speaker effect. The PN-2 has a Rate and Depth control in addition to a 4-way Mode switch giving you the options of Pan-sawtooth, Pan-square, Tremolo-sawtooth or Tremolo-square wave. There is an LED light that blinks along with the tempo of the oscillator, so it is easier to dial in rhythmic tremolo in a low light situation."));
 
-pedalsArray.push (new Pedal ("DigiTech Whammy DT", "DigiTech", "Pitch Shift", "http://www.effectsdatabase.com/model/digitech/whammy/dt", "img/pedals/DigiTechWhammyDT.jpg", "The Whammy pedal is a digital effects pedal designed for guitar and manufactured by DigiTech. The Whammy was the first widely known effects pedal that could do foot controlled pitch shifting effects. The pedal emulates sounds that a guitarist normally makes using the vibrato (whammy) bar on the guitar, but with a greatly enhanced pitch range and without tuning hassles associated with traditional vibrato bars."));
+pedalsArray.push (new Pedal ("DigiTech Whammy DT", "DigiTech", "Pitch Shift", "http://www.effectsdatabase.com/model/digitech/whammy/dt", image, "The Whammy pedal is a digital effects pedal designed for guitar and manufactured by DigiTech. The Whammy was the first widely known effects pedal that could do foot controlled pitch shifting effects. The pedal emulates sounds that a guitarist normally makes using the vibrato (whammy) bar on the guitar, but with a greatly enhanced pitch range and without tuning hassles associated with traditional vibrato bars."));
 
-pedalsArray.push (new Pedal ("Z. Vex Lo-Fi Loop Junky", "Z. Vex", "Looper", "http://www.effectsdatabase.com/model/zvex/lofiloopjunky", "img/pedals/loopJunky.jpg", "This is the Lo-Fi Loop Junky. It's really low fidelity… the recording of your guitar is filled with hiss, moan, distortion and warped-record strangeness, but everyone will be able to tell the loop from your real guitar. Because the processing of your direct guitar is done with my new bootstrap circuit, with the very highest impedance circuit I've ever developed (even higher than the super hard-on circuit) your direct guitar will have detail incomparable with anything you've ever heard. The juxtaposition of your direct guitar against the smashed, distorted, shimmering/warbling recording of the loop mechanism will make it clear once and for all who is the guitarist and what is the machinery."));
+pedalsArray.push (new Pedal ("Zvex Lo-Fi Loop Junky", "Zvex", "Looper", "http://www.effectsdatabase.com/model/zvex/lofiloopjunky", image, "This is the Lo-Fi Loop Junky. It's really low fidelity… the recording of your guitar is filled with hiss, moan, distortion and warped-record strangeness, but everyone will be able to tell the loop from your real guitar. Because the processing of your direct guitar is done with my new bootstrap circuit, with the very highest impedance circuit I've ever developed (even higher than the super hard-on circuit) your direct guitar will have detail incomparable with anything you've ever heard. The juxtaposition of your direct guitar against the smashed, distorted, shimmering/warbling recording of the loop mechanism will make it clear once and for all who is the guitarist and what is the machinery."));
+
+pedalsArray.push (new Pedal ("Electro-Harmonix Memory Man", "Electro-Harmonix", "Delay", 'http://www.effectsdatabase.com/model/eh/memoryman/deluxe', image, 'Experience the warmth of analog. Nothing can compare to the organic sound of analog delay, and no one does analog like the Deluxe Memory Man! Up to 550ms of vibrant echo that rivals tape delay; lush, spatial chorus and haunting vibrato are just a few of the treats in the Memory Man\'s sonic schmorgasbord! Analog warmth that renders digital delay obsolete Memory Man echo with chorus/vibrato!'
+
+pedalsArray.push (new Pedal ("Strymon El Capistan", "Strymon", "dTape Echo", 'http://www.effectsdatabase.com/model/strymon/elcapistan', image, 'El Capistan provides three different tape machine types in one, each with three unique modes. With ten parameters to tweak, you get extensive control over tape quality, machine health and tone shaping. Go from the sound of a pristine, studio-quality tape machine to the heavily fluctuating sound of a machine in need of service. Get the full bodied sound of fresh tape all the way to the gnarled qualities of worn out tape. Because it\'s DSP driven, you get a range of tape experiences unattainable with a traditional tape machine. All of this without the headaches of tape machine maintenance and repair!'));
+
+pedalsArray.push (new Pedal ("Diamond Compressor", "Diamond", "Compressor", 'http://www.effectsdatabase.com/model/diamond/compressor', image, 'The Diamond Compressor is our take on a "guitar channel" - a dynamics and tone shaping tool for live and studio use - with low-noise, ultra-linear signal buffering, smooth opto-based compression, and a versatile tilt EQ that musically shifts overall frequency balance.'));
+
+pedalsArray.push (new Pedal ("Klon Centaur", "Klon", "Overdrive", 'http://www.effectsdatabase.com/model/klon/centaur', image, 'The legend of the Klon Centaur, which debuted in the mid-\'90s, has taken on a life of its own as one of the most collectible effects pedals of all time. Its ground-breaking transparent overdrive circuit, its use by such players as John Mayer, Nels Cline and Joe Perry (to name just a few) and its relative scarcity on the used market have propelled prices to unprecedented levels. Builder Bill Finnegan has made Klons with both gold and silver casings as well as with an without the Centaur logo (commonly referred to as Horsie or Non-Horsie models). The circuits on all these editions are all the same, but the "Horsie" models are a bit rarer so command slightly higher values.'));
+
+pedalsArray.push (new Pedal ("Empress Reverb", "Empress", "Reverb", 'http://www.effectsdatabase.com/model/empress/reverb', image, 'Realistic simulations of spaces, as well as never-before-heard surreal ambiances are represented with stunning sound quality. Sporting stereo ins and outs, a small footprint and all the controls at your finger-tips, it strikes the perfect balance of control and ease of use, avoiding laborious menus. Presets, the versatile control port, and MIDI open up a world of possibilities for live performances. Whether you\'re looking for a classic spring, realistic room or new sonic flavors to expand your creativity, this pedal delivers. And....it\'s got a beer mode! '));
+
+pedalsArray.push (new Pedal ("Boss TU-3 Tuner", 'Boss', 'Tuner', 'http://www.effectsdatabase.com/model/boss/compact/tu3', image, info));
+
+pedalsArray.push (new Pedal ("Sonic Research ST-300 Turbo Tuner", 'Sonic Research', 'Tuner', 'http://www.effectsdatabase.com/model/sonicresearch/st200', image, info));
+
+pedalsArray.push (new Pedal ('Korg Pitchblack Tuner', 'Korg', 'Tuner', 'http://www.effectsdatabase.com/model/korg/pitchblack/advance', image, info));
+
+pedalsArray.push (new Pedal ('TC Electronic Polytune', 'TC Electronic', 'Tuner', 'http://www.effectsdatabase.com/model/tcelectronic/polytune', image, info));
+
+pedalsArray.push (new Pedal ('Analogman King Of Tone','Analogman', "Overdrive", 'http://www.effectsdatabase.com/model/analogman/kingoftone', image, info));
+
+pedalsArray.push (new Pedal ('Proco RAT', 'Proco', 'Distortion', 'http://www.effectsdatabase.com/model/proco/rat', image, info));
+
+pedalsArray.push (new Pedal ('Boss VB-2 Vibrato', 'Boss', 'Vibrato', 'http://www.effectsdatabase.com/model/boss/compact/vb2', image, info));
+
+pedalsArray.push (new Pedal ('Boss DC-2 Dimension C', 'Boss', 'Chorus', 'http://www.effectsdatabase.com/model/boss/compact/dc2', image, info));
+
+pedalsArray.push (new Pedal ('Boss CE-2 Chorus Ensemble', 'Boss', 'Chorus', 'http://www.effectsdatabase.com/model/boss/compact/ce2', image, info));
+
+pedalsArray.push (new Pedal ('Boss CE-1 Chorus Ensemble', 'Boss', 'Chorus', 'http://www.effectsdatabase.com/model/boss/ce1', image, info));
+pedalsArray.push (new Pedal ('Boss PH-1 Phaser', 'Boss', 'Phaser', 'http://www.effectsdatabase.com/model/boss/compact/ph1', image, info));
+pedalsArray.push (new Pedal ('Boss DD-2 Digital Delay', 'Boss', 'Delay', 'http://www.effectsdatabase.com/model/boss/compact/dd2', image, info));
+
+pedalsArray.push (new Pedal ('Boss DM-2 Analog Delay', 'Boss', 'Delay', 'http://www.effectsdatabase.com/model/boss/compact/dm2', image, info));
+
+pedalsArray.push (new Pedal ('Electro-Harmonix Big Muff Pi', 'Electro-Harmonix', 'Fuzz', 'http://www.effectsdatabase.com/model/eh/bigmuffpi', image, info));
+
+pedalsArray.push (new Pedal ('Electro-Harmonix Electric Mistress Flanger', 'Electro-Harmonix', 'Flanger', 'http://www.effectsdatabase.com/model/eh/electricmistress/deluxe', image, info));
+
+pedalsArray.push (new Pedal ('Electro-Harmonix Cathedral Reverb', 'Electro-Harmonix', 'Reverb', 'http://www.effectsdatabase.com/model/eh/xo/cathedral', image, info));
+
+pedalsArray.push (new Pedal ('Electro-Harmonix POG', 'Electro-Harmonix', 'Octaver', 'http://www.effectsdatabase.com/model/eh/pog', image, info));
+
+pedalsArray.push (new Pedal ('Electro-Harmonix Stereo Pulsar', 'Electro-Harmonix', 'Tremolo', 'http://www.effectsdatabase.com/model/eh/xo/pulsar', image, info));
+
+pedalsArray.push (new Pedal ('Electro-Harmonix Memory Boy', 'Electro-Harmonix', 'Delay', 'http://www.effectsdatabase.com/model/eh/xo/memoryboy', image, info));
+
+pedalsArray.push (new Pedal ('EarthQuaker Devices Hoof-Reaper Fuzz', 'EarthQuaker Devices', 'Fuzz', 'http://www.effectsdatabase.com/model/earthquaker/hoofreaper', image, info));
+
+pedalsArray.push (new Pedal ('EarthQuaker Devices Transmisser Reverb', 'EarthQuaker Devices', 'Reverb', 'http://www.effectsdatabase.com/model/earthquaker/transmisser', image, info));
+
+pedalsArray.push (new Pedal ('EarthQuaker Devices Sea Machine', 'EarthQuaker Devices', 'Chorus', 'http://www.effectsdatabase.com/model/earthquaker/seamachine', image, info));
+
+pedalsArray.push (new Pedal ('EarthQuaker Devices Avalanche Run Delay/Reverb', 'EarthQuaker Devices', 'Delay', link, image, info));
+
+pedalsArray.push (new Pedal ('EarthQuaker Devices Afterneath Reverb', 'EarthQuaker Devices', 'Reverb', link, image, info));
+
+pedalsArray.push (new Pedal ('EarthQuaker Devices Dispatch Master Delay/Reverb', 'EarthQuaker Devices', 'Delay', link, image, info));
+
+pedalsArray.push (new Pedal ('Strymon DIG Dual Digital Delay', 'Strymon', 'Delay', 'http://www.effectsdatabase.com/model/strymon/dig', image, 'Effortlessly create your own world of intricate and synchronized echoes, along with hypnotic and atmospheric repeats that blur the line between delay and reverb. Stretch your sonic horizons with five musically satisfying rhythmic subdivisions and three dual delay routing options. Go from syncopated, pulsating delay patterns, to evocative, spaced-out echo'));
+
+pedalsArray.push (new Pedal ('Strymon Blue Sky Reverb', 'Strymon', 'Reverb', 'http://www.effectsdatabase.com/model/strymon/bluesky', image, 'With our blueSky reverb, we have applied the same philosophy as our dBucket pedals. We\'ve taken a super powerful SHARC DSP and dedicated it to doing one thing only … the best reverb ever. Since the entire DSP is dedicated only to doing powerful reverbs, and believe us, we squeeze every last drop of juice, the reverbs are lush and beautiful. Whether you\'re a classic spring reverb fan or more of a studio rack aficionado, you\'ll find your mojo here. The blueSky would be equally at home on top of a mixer or in front of a tube amp. We\'ve even thrown in a plate, unusual in a pedal form factor but extremely useful, versatile and unique sounding. A full pre-delay and damping section provide deep reverb tone shaping. Add to that mod and shimmer modes and you\'ll have unending fun.'));
+
+pedalsArray.push (new Pedal ('Strymon Flint Reverb/Tremolo', 'Strymon', 'Reverb', 'http://www.effectsdatabase.com/model/strymon/flint', image, 'The magical combination of tremolo and reverb is the earliest example of a perfect guitar effects marriage. First pioneered within historic amplifiers of the 1960s, this harmonious coexistence has made it’s way onto countless records and performances—from early surf, swampy bayou blues, spaghetti westerns, film noir soundtracks, to modern day indie rock. There are certain things in life that just belong together—the blend of tremolo and reverb create the perfect pair.'));
+
+pedalsArray.push (new Pedal ('Strymon Timeline', 'Strymon', 'Delay', 'http://www.effectsdatabase.com/model/strymon/timeline', image, 'TimeLine provides you with twelve different delay machines, each with extensive control over sonic character and feel. Tweak to your hearts content and save up to 200 presets of your favorite sounds. Go from crisp and clear, studio-quality digital delays all the way to the saturated and fluctuating sounds of tape delay machines. Get warm and fuzzy analog style repeats all the way to shimmery, sparkling, and crystalline ice delays.'));
+
+pedalsArray.push (new Pedal ('Fairfield Circuitry Meet Maude LO-FI Analog Delay', 'Fairfield Circuitry', 'Delay', 'http://www.effectsdatabase.com/model/fairfield/meetmaude', image, info));
+
+pedalsArray.push (new Pedal ('Fairfield Circuitry Randy\'s Revenge Ring Modulator', 'Fairfield Circuitry', 'Ring Modulator' 'http://www.effectsdatabase.com/model/fairfield/randysrevenge', image, info));
+
+pedalsArray.push (new Pedal ('Fairfield Circuitry Shallow Water K-Field Modulator', 'Fairfield Circuitry', 'Modulation', 'http://www.effectsdatabase.com/model/fairfield/shallowwater', image, info));
+
+pedalsArray.push (new Pedal ('Fairfield Circuitry Barbershop Overdrive', 'Fairfield Circuitry', 'Overdrive', 'http://www.effectsdatabase.com/model/fairfield/barbershop', image, info));
+
+pedalsArray.push (new Pedal ('Ibanez TS-808 Tube Screamer', 'Ibanez', 'Overdrive', 'http://www.effectsdatabase.com/model/ibanez/808/ts808', image, info));
+
+pedalsArray.push (new Pedal ('Zvex Fuzz Factory', 'Zvex', 'Fuzz', 'http://www.effectsdatabase.com/model/zvex/fuzzfactory', image, info));
+
+pedalsArray.push (new Pedal ('Zvex Wooly Mammoth Fuzz', 'Zvex', 'Fuzz', 'http://www.effectsdatabase.com/model/zvex/woollymammoth', image, info));
+
+pedalsArray.push (new Pedal ('Zvex Box Of Rock Distortion', 'Zvex', 'Distortion', 'http://www.effectsdatabase.com/model/zvex/boxofrock', image, info));
+
+pedalsArray.push (new Pedal ('Mr. Black Supermoon Reverb', 'Mr. Black', 'Reverb', 'http://www.effectsdatabase.com/model/mrblack/supermoon', image, info));
+
+pedalsArray.push (new Pedal ('Mr. Black Doublechorus', 'Mr. Black', 'Chorus', 'http://www.effectsdatabase.com/model/mrblack/doublechorus', image, info));
+
+pedalsArray.push (new Pedal ('Mr. Black Eterna Shimmer Reverb', 'Mr. Black', 'Reverb', 'http://www.effectsdatabase.com/model/mrblack/eterna', image, info));
+
+pedalsArray.push (new Pedal ('Analogman Chorus', 'Analogman', 'Chorus', 'http://www.effectsdatabase.com/model/analogman/chorus', image, info));
+
+pedalsArray.push (new Pedal ('Analogman "Bi-Comprossor" Compressor', 'Analogman', 'Compressor', 'http://www.effectsdatabase.com/model/analogman/bicomprossor', image, info));
+
+pedalsArray.push (new Pedal ('Analogman ARDX20 Analog Delay', 'Analogman', 'Delay', 'http://www.effectsdatabase.com/model/analogman/ardx20', image, info));
+
+pedalsArray.push (new Pedal ('Boss TR-2 Tremolo', 'Boss', 'Tremolo', 'http://www.effectsdatabase.com/model/boss/compact/tr2', image, info));
+// pedalsArray.push (new Pedal ('', '', '', link, image, info));
+
+
+
+
+
+
+
+
 
 // Artist variables
 artistsArray.push(new Artist ("Kevin Parker", "Tame Impala", ["Boss DS-1 Distortion", "Electro-Harmonix Small Stone", "Boss BD-2 Blues Driver"], "img/artists/KevinParker.jpg", "Kevin Parker is an Australian singer, songwriter, multi-instrumentalist and record producer, best known for being the frontman and live guitarist of the Australian psychedelic rock band Tame Impala, for which he writes, records, and produces the music."));
