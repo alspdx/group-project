@@ -69,7 +69,7 @@ li {
   height: auto;
   object-fit: cover;
   float: right;
-  margin: 0px 80px;
+  margin-left: 100px;
 }
 
 .form-margin {
@@ -113,6 +113,10 @@ li {
   width: 75%;
 }
 
+.main-div ul {
+  padding: 40px
+}
+
 .step-1 {
   width: 100%;
   height: 100%;
@@ -132,10 +136,18 @@ li {
   display: none;
 }
 
-.splash-image {
+.splash-logo {
   position: absolute;
   top: 45%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%)
+}
+
+.mini-logo {
+  position: absolute;
+  height: 200px;
+  width: auto;
+  bottom: 2%;
+  right: 2%;
 }
