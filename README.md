@@ -1,6 +1,6 @@
 # Effector Selector
 
-#### A Web app that is a central database for effect pedal enthusiasts or hobbyists. Looking for information on a certain effect pedal or trying to figure out what pedal your favorite artist is using to create that sound? This is your one stop web app where you can also create a profile to show off pedals you already own in your collection. , 2017
+#### A Web app that is a central database for effect pedal enthusiasts or hobbyists. Looking for information on a certain effect pedal or trying to figure out what pedal your favorite artist is using to create that sound? This is your one stop web app where you can also create a profile to show off pedals you already own in your collection, 2017
 
 #### by **Tyler Bussanich, Zachary Marston, Mikey Pinaud, Adam Smith**
 
@@ -32,7 +32,6 @@ This web application provides a database of effects pedals, musical artists, and
 ## Setup/Installation Requirements
 
 [View on web browser](https://alspdx.github.io/group-project)
-
 
 Clone or download repository:
   1. Open [this page](https://github.com/alspdx/group-project) in web browser.
