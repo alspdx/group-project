@@ -417,7 +417,7 @@ function makeUserOutput(foundUser) {
 function makeFormOutput() {
   $('#info-output').html('<form id="contact-input" class="removable-main form-margin">' +
                               '<div class="form-group">' +
-                              '<input type="text" class="form-control" placeholder="Name" id="name">' +
+                              '<input type="text" class="form-control" placeholder="Name" id="name" required>' +
                               '<input type="text" class="form-control" placeholder="Band/Group" id="group">' +
                               '<input type="text" class="form-control" placeholder="About me" id="about-me">' +
                               '<div id="add-pedals">' +
