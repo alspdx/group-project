@@ -280,7 +280,7 @@ artistsArray.push(new Artist("Michael White", "(Trippie Redd)", ["Analogman King
 // Users
 usersArray.push(new User("Michael Pinaud", "LDX-ROE", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", ["Boss GE-7 Equalizer", "Strymon Big Sky", "DigiTech DigiDelay"], ["Kevin Shields", "Chelsea Wolfe"]));
 
-usersArray.push(new User("Zachary Marston", "Epicodus", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", ["DigiTech DigiDelay", "Boss RV-3 Reverb/Delay"], ["Donald Glover"]));
+usersArray.push(new User("Zachary Marston", "Epicodus", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", ["DigiTech DigiDelay", "Boss RV-3 Reverb/Delay"], ["Donald Glover", "Chancelor Bennett", "Austin Post", "Dieuson Octave", "Jahseh Onfroy", "Michael White", "Shayaa Abraham-Joseph"]));
 
 usersArray.push(new User("Rick Sanchez", "Wubalubs", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", ["Boss GE-7 Equalizer", "Boss DS-1 Distortion"], ["Kevin Shields", "Kevin Parker"]));
 
@@ -533,4 +533,5 @@ $(function() {
     });
     makeFormOutput();
   })
+
 });
