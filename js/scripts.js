@@ -497,11 +497,17 @@ function makeFormOutput() {
     usersArray.push(newUser);
     $("#users-list").append("<li class='clickable removable-sidebar hover'>" + newUser.name + "</li>");
     attachClick();
+    $("#contact-input").hide();
   });
 }
 
 // Front end logic
 $(function() {
+  $('.step-1').click(function() {
+    $('.step-2').removeClass('step-2');
+    $('.step-1').addClass('step-2');
+  });
+
   $('#pedals').click(function() {
     $('.removable-sidebar').remove();
     pedalsArray.map(function(pedal) {
