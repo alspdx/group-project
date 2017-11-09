@@ -5,9 +5,6 @@ var pedalsArray = [];
 var artistsArray = [];
 var usersArray = [];
 
-
-
-
 // Pedal constructor
 function Pedal(name, brand, type, link, image, info){
   this.name = name;
@@ -37,7 +34,7 @@ function User(name, group, info, pedals, artists) {
   this.artists = artists;
 }
 
-//Pedals
+// Pedals
 pedalsArray.push(new Pedal("MXR Phase 90", "MXR", "Phaser", "http://www.effectsdatabase.com/model/mxr/m101", 'img/pedals/MXRPhase90.png', "This device has found its way into many of Eddie Van Halen's recordings, adding a shimmery velocity to lead passages or a more dramatic swoosh to muted strumming. Not just for guitars; it works well with bass, keyboards and even vocals. Vary the speed from a subtle, long cycle to a fast, watery warble...and myriad vintage vibrations in between."));
 
 pedalsArray.push(new Pedal("Boss BD-2 Blues Driver", "Boss", "Distortion/Overdrive", "http://www.effectsdatabase.com/model/boss/compact/bd2", 'img/pedals/BossBD-2.png', "The BD-2 Blues Driver delivers the creamy, yet crunchy sound associated with great blues guitar. This popular pedal provides instant access to the kind of warm overdrive and emotive distortion usually reserved for 30-year-old tube amps."))
@@ -147,8 +144,6 @@ pedalsArray.push(new Pedal('Analogman Bi-Comprossor Compressor', 'Analogman', 'C
 pedalsArray.push(new Pedal('Analogman ARDX20 Analog Delay', 'Analogman', 'Delay', 'http://www.effectsdatabase.com/model/analogman/ardx20', 'img/pedals/AnalogmanARDX20.png', 'The ARDX20 features a custom built Bucket Brigade Delay circuit, hand-wired internal circuitry, and the first model features an ergonomically designed enclosure. Additionally, the pedal features controls for delay time, feedback, and level.'));
 
 pedalsArray.push(new Pedal('Boss TR-2 Tremolo', 'Boss', 'Tremolo', 'http://www.effectsdatabase.com/model/boss/compact/tr2', 'img/pedals/BossTR-2.png', 'The BOSS TR-2 Tremolo is designed to provide guitarists with classic tremolo effects in an easy-to-use compact pedal. Dedicated "Wave," "Rate," and "Depth" knobs provide a multitude of effect possibilities.'));
-// // pedalsArray.push (new Pedal ('', '', '', link, image, info));
-
 
 // Artists
 artistsArray.push(new Artist("Kevin Parker", "(Tame Impala)", ["Boss DS-1 Distortion", "Electro-Harmonix Small Stone", "Boss BD-2 Blues Driver"], "img/artists/KevinParker.jpg", "Kevin Parker is an Australian singer, songwriter, multi-instrumentalist and record producer, best known for being the frontman and live guitarist of the Australian psychedelic rock band Tame Impala, for which he writes, records, and produces the music."));
@@ -268,8 +263,6 @@ artistsArray.push(new Artist("Jahseh Onfroy", "(XXXTentacion)", ["Boss TU-3 Tune
 artistsArray.push(new Artist("Shayaa Abraham-Joseph", "(21 Savage)", ["Klon Centaur", "Zvex Wooly Mammoth Fuzz", "Sonic Research ST-300 Turbo Tuner", "Boss DM-2 Analog Delay", "Electro-Harmonix Stereo Pulsar"], "img/artists/21savage.jpg", "Shayaa Abraham-Joseph, better known by his stage name 21 Savage, is an American rapper from Atlanta, Georgia. He was best known for his mixtapes, The Slaughter Tape and Slaughter King and his extended plays Free Guwop and Savage Mode with Metro Boomin before the release of his debut album, ISSA and its lead single, Bank Account."));
 
 artistsArray.push(new Artist("Michael White", "(Trippie Redd)", ["Analogman King Of Tone", "Boss DD-2 Digital Delay", "EarthQuaker Devices Sea Machine", "Electro-Harmonix Electric Mistress Flanger", "TC Electronic Polytuney", "Electro-Harmonix Stereo Pulsar"], "img/artists/TrippieRed.jpg", "Michael White, better known by his stage name Trippie Redd, is an American rapper and singer from Ohio. He is best known for his song Love Scars and his collaborations with rapper XXXTentacion."));
-
-// artistsArray.push(new Artist("name", "from", ["pedals"], "img/artists/.jpg", "info"));
 
 // Users
 usersArray.push(new User("Michael Pinaud", "LDX-ROE", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", ["Boss GE-7 Equalizer", "Strymon Big Sky"], ["Kevin Shields", "Chelsea Wolfe"]));
@@ -532,5 +525,5 @@ $(function() {
       $("#users-list").append("<li class='clickable removable-sidebar hover'>" + user.name + "</li>");
     });
     makeFormOutput();
-  })
+  });
 });
