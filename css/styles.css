@@ -1,22 +1,28 @@
 /* COLORS
 dark color: #0E2431
-salmon: #FC3A52
+raspberry: #FC3A52
 mustard: #F9B248
 light sand: #E8D5B7
 */
 
 /*FONTS
 font-family: 'Plaster', cursive;
-font-family: 'Raleway', sans-serif;*/
+font-family: 'Raleway', sans-serif;
+*/
 
 
 body {
   margin: 0;
   padding: 0;
   background-color: #0E2431;
-  color: #fff;
+  color: #E8D5B7;
   font-family: 'Raleway', sans-serif;
   height: 100%;
+  width: auto;
+}
+
+.row {
+  margin-right: 0px;
 }
 
 .hide {
@@ -51,7 +57,7 @@ body {
 }
 
 ul {
-  width: 100%;
+  width: auto;
 }
 
 li {
@@ -59,11 +65,11 @@ li {
 }
 
 .info-image {
-  width: 400px;
+  width: 600px;
   height: auto;
   object-fit: cover;
   float: right;
-  margin: 0px 50px;
+  margin: 0px 80px;
 }
 
 .form-margin {
@@ -81,14 +87,55 @@ li {
 }
 
 .sidebar {
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
-  height: 600px;
+  height: 1200px;
   float: left;
-  width: 30%;
+  width: 20%;
+}
+
+.sidebar::-webkit-scrollbar {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #FC3A52;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 .main-div {
   float: right;
-  width: 70%;
+  width: 75%;
+}
+
+.step-1 {
+  width: 100%;
+  height: 100%;
+}
+
+.step-1 h1 {
+  font-family: 'Plaster', cursive;
+  position: absolute;
+  font-size: 60px;
+  top: 85%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+.step-2 {
+  display: none;
+}
+
+.splash-image {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
