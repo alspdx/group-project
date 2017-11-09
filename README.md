@@ -31,7 +31,7 @@ This web application provides a database of effects pedals, musical artists, and
 
 ## Setup/Installation Requirements
 
-[View on web browser](https://alspdx.github.io/group-project)
+[View on web browser](https://alspdx.github.io/group-project/)
 
 Clone or download repository:
   1. Open [this page](https://github.com/alspdx/group-project) in web browser.
