@@ -16,6 +16,7 @@ body {
   background-color: #0E2431;
   color: #fff;
   font-family: 'Raleway', sans-serif;
+  height: 100%;
 }
 
 .hide {
@@ -24,10 +25,6 @@ body {
 
 .clickable:hover{
   cursor: pointer;
-}
-
-.outline {
-  border: 2px;
 }
 
 .navigation ul {
@@ -69,6 +66,10 @@ li {
   margin: 0px 50px;
 }
 
+.form-margin {
+  margin: 0px 50px;
+}
+
 #add-users {
   float: right;
   text-decoration: underline;
@@ -77,4 +78,17 @@ li {
 .hover li:hover {
   font-size: 20px;
   margin: -3px;
+}
+
+.sidebar {
+  overflow: scroll;
+  position: relative;
+  height: 600px;
+  float: left;
+  width: 30%;
+}
+
+.main-div {
+  float: right;
+  width: 70%;
 }

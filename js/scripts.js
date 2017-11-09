@@ -154,7 +154,7 @@ pedalsArray.push(new Pedal('Mr. Black Eterna Shimmer Reverb', 'Mr. Black', 'Reve
 
 pedalsArray.push(new Pedal('Analogman Chorus', 'Analogman', 'Chorus', 'http://www.effectsdatabase.com/model/analogman/chorus', 'img/pedals/AnalogmanChorus.png', 'The Analogman Bi-Chorus Pedal doubles up on the warm, swirling goodness of one of the company\'s most popular effects in one chassis. Sporting a dual stomp switch design with two sets of controls for speed and depth, the Bi-Chorus\'s all-analog design and easy operation make it a surefire hit for anyone after classic choral tone with boutique construction and design.'));
 
-pedalsArray.push(new Pedal('Analogman "Bi-Comprossor" Compressor', 'Analogman', 'Compressor', 'http://www.effectsdatabase.com/model/analogman/bicomprossor', 'img/pedals/AnalogmanBiComprossor.png', 'The Analogman Bi-Comprossor compressor pedal combines the Comprossor and Juicer pedals into a single enclosure for plenty of squish and variety. The singing sustain of the "ROSS" side mates up perfectly with the more extended sound and more intense compression of the "OS" side of the pedal, modeled after the vintage Dan Armstrong "Orange Squeezer" circuit.'));
+pedalsArray.push(new Pedal('Analogman Bi-Comprossor Compressor', 'Analogman', 'Compressor', 'http://www.effectsdatabase.com/model/analogman/bicomprossor', 'img/pedals/AnalogmanBiComprossor.png', 'The Analogman Bi-Comprossor compressor pedal combines the Comprossor and Juicer pedals into a single enclosure for plenty of squish and variety. The singing sustain of the "ROSS" side mates up perfectly with the more extended sound and more intense compression of the "OS" side of the pedal, modeled after the vintage Dan Armstrong "Orange Squeezer" circuit.'));
 
 pedalsArray.push(new Pedal('Analogman ARDX20 Analog Delay', 'Analogman', 'Delay', 'http://www.effectsdatabase.com/model/analogman/ardx20', 'img/pedals/AnalogmanARDX20.png', 'The ARDX20 features a custom built Bucket Brigade Delay circuit, hand-wired internal circuitry, and the first model features an ergonomically designed enclosure. Additionally, the pedal features controls for delay time, feedback, and level.'));
 
@@ -434,7 +434,7 @@ function makeUserOutput(foundUser) {
 }
 
 function makeFormOutput() {
-  $('#info-output').html('<form id="contact-input" class="removable-main">' +
+  $('#info-output').html('<form id="contact-input" class="removable-main form-margin">' +
                               '<div class="form-group">' +
                               '<input type="text" class="form-control" placeholder="Name" id="name">' +
                               '<input type="text" class="form-control" placeholder="Band/Group" id="group">' +
@@ -455,6 +455,12 @@ function makeFormOutput() {
                               '<button id="contact-info" type="submit" class="btn btn-outline-black btn-lg btn-block head clickable">Submit</button>' +
                               '</form>'
                             );
+  pedalsArray.map(function(pedal) {
+    $(".add-pedal-select").append('<option value="' + pedal.name + '">' + pedal.name + '</option>');
+  });
+  artistsArray.map(function(artist) {
+    $(".add-artist-select").append('<option value="' + artist.name + '">' + artist.name + '</option>');
+  });
 
   //when add another pedal button is clicked
   $('#add-another-pedal').click(function() {
